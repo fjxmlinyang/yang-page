@@ -115,7 +115,7 @@ author:
   xing             :
   youtube          :
   wikipedia        :
-  linkedin         : "https://www.linkedin.com/in/yang-lin-80454357"
+  linkedin         : "/in/yang-lin-80454357"
 
 
 # Reading Files
@@ -185,9 +185,9 @@ collections:
   portfolio:
     output: true
     permalink: /:collection/:path/
-  talks:
-    output: true
-    permalink: /:collection/:path/
+  # talks:
+  #   output: true
+  #   permalink: /:collection/:path/
 
 
 # Defaults
