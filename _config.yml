@@ -83,7 +83,7 @@ author:
   name             : "Yang Lin"
   avatar           : "profile.png"
   bio              : "Researcher on making decision under uncertainty"
-  location         : #"New York,NY"
+  location         : "New York,NY"
   employer         :
   pubmed           : #"https://www.ncbi.nlm.nih.gov/pubmed/?term=john+snow"
   googlescholar    : #"http://yourfullgooglescholarurl.com"
@@ -96,7 +96,7 @@ author:
   flickr           :
   facebook         :
   foursquare       :
-  github           : "https://github.com/fjxmlinyang"
+  github           : "/fjxmlinyang"
   google_plus      :
   keybase          :
   instagram        :
