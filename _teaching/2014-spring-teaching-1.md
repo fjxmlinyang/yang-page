@@ -2,7 +2,8 @@
 title: "MA575-Optimization Models in Quantitative Finance"
 collection: teaching
 type: "Undergraduate course"
-permalink: /teaching/2MA575-Optimization Models in Quantitative Finance: "Stevens Institue of Technology"
+permalink: /teaching/2MA575-Optimization Models in Quantitative Finance
+venue: "Stevens Institue of Technology"
 date: 2020-09-01
 location: "Hoboken, NJ"
 ---
