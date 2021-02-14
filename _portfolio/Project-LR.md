@@ -1,3 +1,9 @@
+```
+title: "Portfolio Linear Regression"
+excerpt: "Explore LR model 1<br/><img src='/images/500x300.png'>"
+collection: portfolio
+```
+
 
 
 ```python
@@ -72,7 +78,7 @@ rmse
 2. transform feature into the properformat
 
  a. (numerical to categorical, scaling numerical, filling in missing values, etc)
- 
+
  b. (remove any columns that leak info about the sale(ex: the year sale))
 3. create new feature by combining other features
 
@@ -322,7 +328,7 @@ numerical_df.head(5)
     .dataframe tbody tr th {
         vertical-align: top;
     }
-
+    
     .dataframe thead th {
         text-align: right;
     }
@@ -853,7 +859,7 @@ transform_df
     .dataframe tbody tr th {
         vertical-align: top;
     }
-
+    
     .dataframe thead th {
         text-align: right;
     }
