@@ -1,8 +1,12 @@
-```
-title: "Portfolio Linear Regression"
-excerpt: "Explore LR model 1<br/><img src='/images/500x300.png'>"
+---
+title: "Project: Linear Regression"
+excerpt: "Explore LR model <br/><img src='/images/500x300.png'>"
 collection: portfolio
-```
+---
+
+# Project: Linear Regression
+
+
 
 
 
