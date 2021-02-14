@@ -18,5 +18,5 @@ main:
   - title: "Guide"
     url: /markdown/
     
-  # - title: "Talks"
-  #   url: /talks/  
+  - title: "Gallery"
+    url: /gallery/  
