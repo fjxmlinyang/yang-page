@@ -8,7 +8,7 @@ tags:
   - Optimization
 ---
 
-Here we are talking about Bayes models.
+We are talking about Bayes models here.
 
 
 

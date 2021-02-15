@@ -8,7 +8,7 @@ tags:
   - Optimization
 ---
 
-Here is about how to select and measure the model we have:
+Here are notes about model performance
 
 
 

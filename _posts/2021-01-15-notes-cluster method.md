@@ -8,7 +8,7 @@ tags:
   - Optimization
 ---
 
-Here are about cluster method. 
+Here are notes about cluster method. 
 
 Question: is it related to kernel method?
 

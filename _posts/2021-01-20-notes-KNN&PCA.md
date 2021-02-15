@@ -8,7 +8,7 @@ tags:
   - Optimization
 ---
 
-Here is the notes about KNN&PCA
+Here are notes about KNN&PCA
 
 
 
