@@ -1,5 +1,5 @@
 ---
-title: 'Tree based methods'
+title: 'notes-Tree based methods'
 date: 2021-01-05
 permalink: /posts/2021/01/notes-Tree based methods/
 tags:

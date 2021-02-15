@@ -129,7 +129,9 @@ Gradient descent is a commonly used optimization technique for other models as w
 
 
 
+Reference:
 
+1) books: an introduction to statistical learning
 
 
 
@@ -141,7 +143,7 @@ Gradient descent is a commonly used optimization technique for other models as w
 
 # SVM
 
-1.见自己的文章，
+1.refer to your publications
 
 $E((w^Tx+b,0)_{\max})$?
 
