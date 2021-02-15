@@ -1,10 +1,8 @@
 ---
-title: "Project: Linear Regression"
-excerpt: "Explore LR model <br/><img src='/images/500x300.png'>"
+title: "Project: Prediction with Linear Regression"
+excerpt: "Explore LR model <br/>"
 collection: portfolio
 ---
-
-# Project: Linear Regression
 
 
 
