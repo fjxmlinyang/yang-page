@@ -1,7 +1,7 @@
 ---
 title: 'Modulus of continuity&approximated convolution identity'
 date: 2020-04-02
-permalink: /posts/2020/04/blog-post/
+permalink: /posts/2020/04/Modulus of continuity&approximated convolution identity/
 tags:
   - optimization
   - concepts

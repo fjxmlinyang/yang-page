@@ -382,7 +382,11 @@ $$
 
 
 
-#### 2020/07/02: Topic: Cone (Reference :当我们谈凸锥时，我们在谈些什么？https://zhuanlan.zhihu.com/p/50156433)
+#### 2020/07/02: Topic: Cone
+
+We discuss convex cone and optimal conditions here
+
+####  (Reference :当我们谈凸锥时，我们在谈些什么？https://zhuanlan.zhihu.com/p/50156433)
 
 
 
@@ -572,6 +576,14 @@ It includes any of all of the following:
 1)***Formulation of problems into mathematical programming***(==formulation==& ==explanation==& ==comparison==)
 
 2)***Analysis of the result***(==the meaning of lagrange multiplier?== Like  shadow price)
+
+
+
+Reference:
+
+1)https://glossary.informs.org/ver2/mpgwiki/index.php?title=Main_Page
+
+
 
 
 

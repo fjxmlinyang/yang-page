@@ -1,7 +1,7 @@
 ---
 title: 'Machine Learning-risk minimization problem'
 date: 2020-04-01
-permalink: /posts/2020/04/blog-post/
+permalink: /posts/2020/04/risk minimization problem/
 tags:
   - Learning Theory
   - Optimization
