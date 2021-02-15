@@ -402,9 +402,7 @@ The set of all tangent directions $d$ to $C$ at $\bar{x}$ is called tangent cone
 $$
 T_C(\bar{x})=\{d \in \mathbb{R}^n: \exists \{x^k\}  \textit{ with } x^k \in C \textit{, and } \{\tau^k\} \rightarrow 0 \textit{ such that } d=\lim_{k \rightarrow \infty} \frac{x^k-\bar{x}}{\tau^{k}} \}
 $$
-这个定义告诉我们什么？假如有一个闭集，然后有一点x在这个闭集内，与此同时闭集内有一组逐渐收敛于x的序列。在点x附近（neighborhood）所有可以收敛的方向都是这个点的tangent direction。点x在该闭集上的tangent cone一般来说是从该点做切线，并包含闭集内部的向外延伸的锥。
-
-<img src="/Users/yanglin/Desktop/Screen Shot 2020-07-02 at 2.29.58 PM.png" alt="Screen Shot 2020-07-02 at 2.29.58 PM" style="zoom:100%;" />
+这个定义告诉我们什么？假如有一个闭集，然后有一点x在这个闭集内，与此同时闭集内有一组逐渐收敛于x的序列。在点x附近（neighborhood）所有可以收敛的方向都是这个点的tangent direction。点x在该闭集上的tangent cone一般来说是从该点做切线，并包含闭集内部的向外延伸的锥。![Screen Shot 2020-07-02 at 3.26.00 PM](/Users/yanglin/Documents/GitHub/fjxmlinyang.github.io/_posts/Screen Shot 2020-07-02 at 3.26.00 PM.png)
 
 ##### Linearized cone
 
@@ -449,7 +447,7 @@ The set of all feasible directions of $C$ at $x$ is denoted by $\mathcal{F}_C(x)
 
 1)直观来说就是在某个点出发”可以移动的方向“，就是沿着这个方向走的步长打鱼0，但仍然在这个set中。
 
-2）如果定义是凸集，这两个结果一样，如果不是凸集就不一样了。对于非图集合，需要加一些附加条件才行![Screen Shot 2020-07-02 at 2.29.58 PM](/Users/yanglin/Desktop/JCIK-Study/markdown/Screen Shot 2020-07-02 at 2.29.58 PM.png)
+2）如果定义是凸集，这两个结果一样，如果不是凸集就不一样了。对于非图集合，需要加一些附加条件才行![Screen Shot 2020-07-02 at 2.29.58 PM](/Users/yanglin/Documents/GitHub/fjxmlinyang.github.io/_posts/Screen Shot 2020-07-02 at 2.29.58 PM.png)
 
 图2-1中，根据定义可以得到，tangent cone 和 feasible direction是一样的。而图2-2，feasible direction为空集，因为向任意一个方向移动严格大于零的一步，都有可能不在定义域内。所以我们初步得到，对于凸集，两者相等；对于非凸集合，需要一些附加条件才行。
 
@@ -532,6 +530,10 @@ T_C(\bar{x})=L_C(\bar{x})
 $$
 
 
+
+Reference:
+
+1）知乎回答https://zhuanlan.zhihu.com/p/50156433
 
 
 

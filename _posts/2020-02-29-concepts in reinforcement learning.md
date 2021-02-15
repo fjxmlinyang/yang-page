@@ -1,7 +1,7 @@
 ---
 title: 'On Policy/Off Policy&Morte Carlo/ Temporal Difference'
 date: 2020-02-29
-permalink: /posts/2020/02/blog-post/
+permalink: /posts/2020/02/concepts in reinforcement learning/
 tags:
   - RL&DL&SO
   - Reinforcement Learning
@@ -52,7 +52,7 @@ Where $R(\gamma)=r_1+\gamma r_2+\cdots \gamma^{T-1}r_{T}$
 * Increment total return $G(s)+G(s)+G_{i,t}$
 * Update estimate: $V^{\pi}=G(s)/N(s)$
 
-#####1.2 Monte Carlo off policy evaluation 
+##### 1.2 Monte Carlo off policy evaluation 
 
 $$
 V^{\pi}(s)=E_{\gamma \sim \pi}(R(\gamma|s_0=s))=\int P(\gamma|\pi)R(\gamma)=\int P(\gamma|\mu)\frac{P(\gamma|\pi)}{\gamma|\mu}R(\gamma)=E_{\gamma \sim \mu}(\frac{P(\gamma|\pi)}{P(\gamma|\mu)}R(\gamma))

@@ -1,7 +1,7 @@
 ---
 title: 'Two Concepts of convergence'
 date: 2019-12-01
-permalink: /posts/2019/12/blog-post/
+permalink: /posts/2019/12/Two Concepts of convergence/
 tags:
   - RL&DL&SO
   - Optimziation
