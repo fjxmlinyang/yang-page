@@ -2,12 +2,11 @@
 title: "Project: Building a Spam Filter with Naive Bayes"
 excerpt: "Explore Bayes model <br/>"
 collection: portfolio
-
 ---
 
 
 
-
+This is the project from Dataquest
 
 1. Assign probabilities to events based on certain conditions by using condtional probability rules
 2. Assign probabilities to events based on whether they are inrelationship of statistical independence or not with other events

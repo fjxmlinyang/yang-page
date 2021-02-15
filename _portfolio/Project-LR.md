@@ -6,7 +6,7 @@ collection: portfolio
 
 
 
-
+This is the project from dataquest.
 
 ```python
 import pandas as pd
