@@ -8,6 +8,8 @@ date: 2020-09-01
 location: "Hoboken, NJ"
 ---
 
+
+
 #### **Course Description**
 
 This course introduces the students to mathematical models and computational methods for static and dynamic optimization problems occurring in finance. We shall discuss linear and non-linear optimization models of finance, dynamic (sequential) optimization, optimization under uncertainty, mathematical models of risk, and their application. Additionally, duality theory and its use in economics and finance will be stresses. The students will be familiarized with the concept of risk and risk-aversion. The models involve knowledge of probability, optimality conditions, duality, and basic numerical methods. Special attention will be paid to portfolio optimization and to risk management problems.

@@ -1,12 +1,14 @@
 ---
 title: "Ma 230 Multivariate calculus and optimization"
 collection: teaching
-type: "Graduate course"
+type: "Undergraduate course"
 permalink: /teaching/Ma 230 Multivariate calculus and optimization
 venue: "Stevens Institue of Technology"
 date: 2021-01-15
 location: "Hoboken, NJ"
 ---
+
+
 
 #### **Course Description**
 
