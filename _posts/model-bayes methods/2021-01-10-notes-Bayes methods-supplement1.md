@@ -1,3 +1,17 @@
+---
+title: 'notes-Bayes methods-supplement'
+date: 2021-01-10
+permalink: /posts/2021/01/Bayes methods/
+tags:
+  - Models
+  - Machine Learning
+  - Optimization
+---
+
+
+
+
+
 
 
 
