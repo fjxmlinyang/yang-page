@@ -12,7 +12,13 @@ We are talking about Bayes models here.
 
 
 
-# naive beyes &贝叶斯分类器
+# Bayes Method
+
+
+
+
+
+
 
 ### EM（Expectation-Maximization）&MLE
 
@@ -52,11 +58,41 @@ $h_{nb}(\textbf{x})=\arg \max_{c \in Y}P(c)\Pi_{i=1}^dP(x_i|c)$
 
 
 
+### naive bayes classifier
+
+condition: attribute conditional independence assumption:every feature independently influences the outcome
+
+
+
+We have 
+
+$$P(c|x)=\frac{P(c)P(x|c)}{P(x)}=\frac{P(c)}{P(x)}\Pi_{i=1}^{d}P(x_i|c)$$
+
+where $d$ is the number of the features, and $x_i$ is the $i$th outcome in feature $i$.
+
+The principle of bayes classification:
+
+$$h_{nb}(x)=\arg \max_{c \in \mathcal{Y}}P(c)\Pi_{i=1}^d P(x_i|c)$$
+
+显然，naive bayes classification的训练过程就是基于训练集$D$ 来估计 先验概率 $P(c)$, 并为每个属性估计条件概率 $P(x_i|c)$
+
+1. 令$D_c$ 表示训练集 $D$中第$c$类样本组成的集合，若有充足的独立同分布样本，则可$P(c)=\frac{|D_c|}{D}$
+
+2. 对离散属性，另$D_{c,x_i}$ 表示 $D_c$中的第$i$个属性上取值为$x_i$的样本组成集合，则$P(x_i|c)=\frac{|D_{c,x_i}|}{|D_c|}$
+
+   对连续型，可以考虑密度函数 $p(x_i|c)=\frac{1}{\sqrt{2\pi}\sigma_{c,i}}\exp(-\frac{(x_i-\mu_{c,i})^2}{2\sigma_{c,i}^2})$ 
+
+
+
+
+
+
+
 ### Bayesian Network
 
 
 
-不要当作是概率，当作是另一个事情对这个事情的提升
+
 
 Reference：
 
@@ -72,7 +108,7 @@ Reference：
 
 
 
-
+**不要当作是概率，当作是另一个事情对这个事情的提升**
 
 ​	作者：知乎用户
 链接：https://www.zhihu.com/question/19725590/answer/32177811
