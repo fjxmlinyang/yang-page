@@ -1,7 +1,7 @@
 ---
 title: 'notes-Bayes methods-supplement'
 date: 2021-01-10
-permalink: /posts/2021/01/Bayes methods/
+permalink: /posts/model-bayes methods/2021-01-10-notes-Bayes methods-supplement1
 tags:
   - Models
   - Machine Learning
