@@ -150,3 +150,16 @@ where $\bar{f}(x)=E_D[f(x;D)]$;
 
 3)how about statistical learning thoery with loss function?
 
+
+
+
+
+from林轩田 8topics in ML
+
+1. when can machines learn ?
+2. why can machines learn?
+3. how can machines learn?
+4. how can machines learn better?
+5. how can machines learning by embedding numerous features
+6. how can machines learning by combining predictive features?
+7. how can machines learning by distilling hidden features?
