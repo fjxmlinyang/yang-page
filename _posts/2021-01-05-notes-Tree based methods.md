@@ -46,8 +46,7 @@ tree regression: $f(X)=\sum_{m=1}^M c_m I_{(X \in R_m)}$
 For step 1, **how do we construct the regions**  $R_1, R_2, \cdots, R_J$?
 
 1. **a top-down, greedy approach** 自上而下"说的是从树顶分割成两个新的分支 The approach is top-down because it begins at the top of the tree (at which point
-   all observations belong to a single region) and then successively splits the
-   predictor space; each split is indicated via two new branches further down
+   all observations belong to a single region) and then successively **splits the predictor space**(依次分裂预测变量空间); each split is indicated via two new branches further down
    on the tree.
 2. that is known as ***recursive binary splitting***
 3. **greedy:** It is greedy because at each step of the tree-building process,在建立树的每一个步骤中
@@ -70,6 +69,10 @@ For step 1, **how do we construct the regions**  $R_1, R_2, \cdots, R_J$?
 #### 原理3：Tree Pruning
 
 The process described above may produce good predictions on the training set, but is likely to overfit the data, leading to poor test set performance.
+
+
+
+
 
 **How do we determine the best way to prune the tree? **
 
