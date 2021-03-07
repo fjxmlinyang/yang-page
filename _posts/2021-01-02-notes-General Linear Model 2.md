@@ -1,7 +1,7 @@
 ---
-title: 'notes-General Linear Regression'
+title: 'notes-General Linear Model 2'
 date: 2021-01-01
-permalink: /posts/2021/01/notes-General Linear Regression 2/
+permalink: /posts/2021/01/notes-General Linear Model 2/
 tags:
   - Models
   - Machine Learning
@@ -12,13 +12,40 @@ Continue previous linear regression. Here we would like to introduce Logistic re
 
 ### Logistic Regression
 
-1. 
-2. Linear discriminant analysis 线性判别分析 (LDA)是对费舍尔的线性鉴别方法的归纳，这种方法使用统计学，模式识别和机器学习方法，试图找到两类物体或事件的特征的一个线性组合，以能够特征化或区分它们。所得的组合可用来作为一个线性分类器，或者，更常见的是，为后续的分类做降维处理。
-3. LDA与方差分析（ANOVA）和回归分析紧密相关，这两种分析方法也试图通过一些特征或测量值的线性组合来表示一个因变量。然而，方差分析使用类别自变量和连续数因变量，而判别分析连续自变量和类别因变量（即类标签）。逻辑回归和概率回归比方差分析更类似于LDA，因为他们也是用连续自变量来解释类别因变量的。LDA的基本假设是自变量是正态分布的，当这一假设无法满足时，在实际应用中更倾向于用上述的其他方法。
 
 
 
-### Ridge regression/Lasso regression
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1. Linear discriminant analysis 线性判别分析 (LDA)是对费舍尔的线性鉴别方法的归纳，这种方法使用统计学，模式识别和机器学习方法，试图找到两类物体或事件的特征的一个线性组合，以能够特征化或区分它们。所得的组合可用来作为一个线性分类器，或者，更常见的是，为后续的分类做降维处理。
+2. LDA与方差分析（ANOVA）和回归分析紧密相关，这两种分析方法也试图通过一些特征或测量值的线性组合来表示一个因变量。然而，方差分析使用类别自变量和连续数因变量，而判别分析连续自变量和类别因变量（即类标签）。逻辑回归和概率回归比方差分析更类似于LDA，因为他们也是用连续自变量来解释类别因变量的。LDA的基本假设是自变量是正态分布的，当这一假设无法满足时，在实际应用中更倾向于用上述的其他方法。
+
+
+
+
+
+### Regularization——Ridge regression/Lasso regression
 
 
 

@@ -1,7 +1,7 @@
 ---
-title: 'notes-General Linear Regression'
+title: 'notes-General Linear Model 3'
 date: 2021-01-01
-permalink: /posts/2021/01/notes-General Linear Regression 2/
+permalink: /posts/2021/01/notes-General Linear Model 3/
 tags:
   - Models
   - Machine Learning

@@ -1,7 +1,7 @@
 ---
-ytitle: 'notes-General Linear Regression'
+ytitle: 'notes-General Linear Model 1'
 date: 2021-01-01
-permalink: /posts/2021/01/notes-General Linear Regression 1/
+permalink: /posts/2021/01/notes-General Linear Model 1/
 tags:
   - Models
   - Machine Learning
@@ -14,7 +14,9 @@ Here are the notes for general linear regression.
 
 
 
-# General Linear Regression 1
+# General Linear Model 1——Linear Regression
+
+
 
 ## 1.What is Linear Regression?
 
