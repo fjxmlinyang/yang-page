@@ -23,7 +23,7 @@ as terminal nodes or leaves of the tree.
 
 4)  link to the GAM& linear regression
 
-$E[Y|X_1,\cdots,X_p]=\alpha+f_1(X_1)+\cdots+f_p(X_p)$  Generalized additive model(GAM)
+$E[Y\bigm|X_1,\cdots,X_p]=\alpha+f_1(X_1)+\cdots+f_p(X_p)$  Generalized additive model(GAM)
 
 
 

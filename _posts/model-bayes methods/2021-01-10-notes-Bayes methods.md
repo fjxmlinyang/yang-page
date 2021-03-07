@@ -36,25 +36,25 @@ We are talking about Bayes models here.
 
 2-1)假设有$N$种可能的类别标记，即$Y=\{c_1,\cdots,c_N\}$, $\lambda_{ij}$是将一个真实的标记为$c_j$的样本误分类为$c_i$所产生的损失。基于后验概率$P(c_i|\textbf{x})$ 可获得将样本 $\textbf{x}$分类为 $c_i$所产生的期望损失（expected loss），即在样本$\textbf{x}$ 上的条件风险（conditional risk）
 $$
-R(c_i|\textbf{x})=\sum_{j=1}^N \lambda_{ij}P(c_j|\textbf{x})
+R(c_i\bigm|\textbf{x})=\sum_{j=1}^N \lambda_{ij}P(c_j\bigm|\textbf{x})
 $$
 我们的任务是寻找一个判定准则 $h: \mathcal{X}\rightarrow \mathcal{Y}$ 以最小化总体风险
 $$
-R(h)=E_x[R(h(x))|x]
+R(h)=E_x[R(h(x))\bigm|x]
 $$
-2-2)显然，对每个样本$\textbf{x}$,若 $h$能最小化条件风险 $R(h(x)|x)$,则总体风险 $R(h)$也将被最小化，这就产生了贝叶斯判定准则（bayes decision rule）：为最小化总体风险，只需要在每个样本上选择哪个能使得**条件风险$R(c|\textbf{x})$**最小化的标记，即
+2-2)显然，对每个样本$\textbf{x}$,若 $h$能最小化条件风险 $R(h(x)\bigm|x)$,则总体风险 $R(h)$也将被最小化，这就产生了贝叶斯判定准则（bayes decision rule）：为最小化总体风险，只需要在每个样本上选择哪个能使得**条件风险$R(c\bigm|\textbf{x})$**最小化的标记，即
 $$
-h^{\ast}(x)=\arg \min_{c \in \mathcal{Y}}R(c|\textbf{x})
+h^{\ast}(x)=\arg \min_{c \in \mathcal{Y}}R(c\bigm|\textbf{x})
 $$
 此时 $h^{\ast}$称为贝叶斯最优分类器（bayes optimal classifier）；与之对应的总体风险$R(h^{\ast})$称为贝叶斯风险（bayes risk）；$1-R(h^{\ast})$反应了分类器所能达到的最好性能，则通过机器学习所能产生的模型精度的理论上限。
 
 3）这里就是naive bayes的情况：（bayes说白了就是你找损失最小化的方式，和之前的mean square error对应？）
 
-$P(c|\textbf{x})=\frac{P(c)P(\textbf{x}|c)}{P(\textbf{x})}=\frac{P(c)}{P(\textbf{x})}\Pi_{i=1}^dP(x_i|c)$
+$P(c\bigm|\textbf{x})=\frac{P(c)P(\textbf{x}\bigm|c)}{P(\textbf{x})}=\frac{P(c)}{P(\textbf{x})}\Pi_{i=1}^dP(x_i\bigm|c)$
 
 $i$是$\{x_i\}$的个数
 
-$h_{nb}(\textbf{x})=\arg \max_{c \in Y}P(c)\Pi_{i=1}^dP(x_i|c)$
+$h_{nb}(\textbf{x})=\arg \max_{c \in Y}P(c)\Pi_{i=1}^dP(x_i\bigm|c)$
 
 
 
@@ -66,21 +66,21 @@ condition: attribute conditional independence assumption:every feature independe
 
 We have 
 
-$$P(c|x)=\frac{P(c)P(x|c)}{P(x)}=\frac{P(c)}{P(x)}\Pi_{i=1}^{d}P(x_i|c)$$
+$$P(c\bigm|x)=\frac{P(c)P(x\bigm|c)}{P(x)}=\frac{P(c)}{P(x)}\Pi_{i=1}^{d}P(x_i\bigm|c)$$
 
 where $d$ is the number of the features, and $x_i$ is the $i$th outcome in feature $i$.
 
 The principle of bayes classification:
 
-$$h_{nb}(x)=\arg \max_{c \in \mathcal{Y}}P(c)\Pi_{i=1}^d P(x_i|c)$$
+$$h_{nb}(x)=\arg \max_{c \in \mathcal{Y}}P(c)\Pi_{i=1}^d P(x_i\bigm|c)$$
 
 显然，naive bayes classification的训练过程就是基于训练集$D$ 来估计 先验概率 $P(c)$, 并为每个属性估计条件概率 $P(x_i|c)$
 
-1. 令$D_c$ 表示训练集 $D$中第$c$类样本组成的集合，若有充足的独立同分布样本，则可$P(c)=\frac{|D_c|}{D}$
+1. 令$D_c$ 表示训练集 $D$中第$c$类样本组成的集合，若有充足的独立同分布样本，则可$P(c)=\frac{\left|D_c\right|}{D}$
 
-2. 对离散属性，另$D_{c,x_i}$ 表示 $D_c$中的第$i$个属性上取值为$x_i$的样本组成集合，则$P(x_i|c)=\frac{|D_{c,x_i}|}{|D_c|}$
+2. 对离散属性，另$D_{c,x_i}$ 表示 $D_c$中的第$i$个属性上取值为$x_i$的样本组成集合，则$P(x_i\bigm|c)=\frac{\left|D_{c,x_i}\right|}{\left|D_c\right|}$
 
-   对连续型，可以考虑密度函数 $p(x_i|c)=\frac{1}{\sqrt{2\pi}\sigma_{c,i}}\exp(-\frac{(x_i-\mu_{c,i})^2}{2\sigma_{c,i}^2})$ 
+   对连续型，可以考虑密度函数 $p(x_i\bigm|c)=\frac{1}{\sqrt{2\pi}\sigma_{c,i}}\exp(-\frac{(x_i-\mu_{c,i})^2}{2\sigma_{c,i}^2})$ 
 
 
 
@@ -112,19 +112,19 @@ $F_3$:
 
 1)
 
-What we shall use? 条件概率$P(C|A)=\frac{P(C)P(A|C)}{P(A)}$
+What we shall use? 条件概率$P(C\bigm|A)=\frac{P(C)P(A\bigm|C)}{P(A)}$
 
 if we know F_1=small, F_2=medium, F_3=real ,can we tell which type of fraud?
 
-we need to find $P(C| F_1, \cdots, F_n)$
+we need to find $P(C\bigm| F_1, \cdots, F_n)$
 
-$P(C| F_1, \cdots, F_n)=\frac{P(C)P(F_1,\cdots,F_n|C)}{P(F_1,\cdots,F_n)}$
+$P(C\bigm| F_1, \cdots, F_n)=\frac{P(C)P(F_1,\cdots,F_n\bigm|C)}{P(F_1,\cdots,F_n)}$
 
- where $P(F_1,\cdots,F_n|C)=P(F_1|C)P(F_2|C,F_1)\cdots P(F_n|C, F_1,\cdots,F_{n-1})$
+ where $P(F_1,\cdots,F_n\bigm|C)=P(F_1\bigm|C)P(F_2\bigm|C,F_1)\cdots P(F_n\bigm|C, F_1,\cdots,F_{n-1})$
 
 Then under the assumption of conditional independent
 
-we have the $P(F_1,\cdots, F_n|C)=P(F_1|C)P(F_2|C)\cdots F(F_n|C)$
+we have the $P(F_1,\cdots, F_n\bigm|C)=P(F_1\bigm|C)P(F_2\bigm|C)\cdots F(F_n\bigm|C)$
 
 2) how to calculate? 
 
@@ -161,7 +161,7 @@ Notes：
 
 1. Discrete：bernoulli？et.c
 
-   Bernoullli？P(Y=y)=p^{y}(1-p)^{1-y}$, $0<p<1$, $y=0,1$
+   Bernoullli？$P(Y=y)=p^{y}(1-p)^{1-y}$, $0<p<1$, $y=0,1$
 
 2. Continuous： normal， weibull？
 

@@ -46,7 +46,7 @@ so, what is our target?
 
 ​	1. 如何我们要知道我们好不好呢？就需要看看error
 
-​		$Error=|y_i-y_i^{'}|$
+​		$Error=\left| y_i-y_i^{'}\right|$
 
 	2. error 可以变化吗？可以,　但是为了好计算所以用squre
  	3. loss function=total error
@@ -101,21 +101,21 @@ $$
 
 4. 推导**(面试必考题)**
 
-   1. we know that $Y|X \sim N(\bar{\beta}_0+\bar{\beta}_1X, \sigma^2)$
+   1. we know that $Y\bigm|X \sim N(\bar{\beta}_0+\bar{\beta}_1X, \sigma^2)$
 
    2.  
       $$
-      p(Y_i|X_i)=\frac{1}{\sigma(2\pi)}e^{-\frac{1}{2\sigma^2}(Y_i-\bar{\beta}_0-\bar{\beta}_1X_i)^2}
+      p(Y_i\bigm|X_i)=\frac{1}{\sigma(2\pi)}e^{-\frac{1}{2\sigma^2}(Y_i-\bar{\beta}_0-\bar{\beta}_1X_i)^2}
       $$
       
 
    3. $$
-      L(\bar{\beta}_0,\bar{\beta}_1,\sigma^2)=p(Y_1,\cdots,Y_n|X_1,\cdots,X_n)=\frac{1}{\sigma^{n}(2\pi)^{n/2}}e^{-\frac{1}{2\sigma^2}\sum_{i=1}^n(Y_i-\bar{\beta}_0-\bar{\beta}_1X_i)^2}
+      L(\bar{\beta}_0,\bar{\beta}_1,\sigma^2)=p(Y_1,\cdots,Y_n\bigm|X_1,\cdots,X_n)=\frac{1}{\sigma^{n}(2\pi)^{n/2}}e^{-\frac{1}{2\sigma^2}\sum_{i=1}^n(Y_i-\bar{\beta}_0-\bar{\beta}_1X_i)^2}
       $$
 
       under the assumption $(X_1,Y_1),\cdots, (X_n,Y_n)$ are independent
 
-      where $L(\bar{\beta}_0,\bar{\beta}_1,\sigma^2)=p(Y_1,\cdots,Y_n|X_1,\cdots,X_n)=p(Y_1|X_1,\cdots,X_n)\cdots p(Y_n|X_1,\cdots,X_n) =p(Y_1|X_1)p(Y_2|X_2)\cdots p(Y_n|X_n)$
+      where $L(\bar{\beta}_0,\bar{\beta}_1,\sigma^2)=p(Y_1,\cdots,Y_n\bigm|X_1,\cdots,X_n)=p(Y_1\bigm|X_1,\cdots,X_n)\cdots p(Y_n\bigm|X_1,\cdots,X_n) =p(Y_1\bigm|X_1)p(Y_2\bigm|X_2)\cdots p(Y_n\bigm|X_n)$
 
    4. the corresponding the log function:(我只关心parameter，log函数不影响单调等数学性质)
       $$
