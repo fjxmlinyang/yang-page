@@ -1,7 +1,7 @@
 ---
-title: 'notes-General Linear Regression'
+ytitle: 'notes-General Linear Regression'
 date: 2021-01-01
-permalink: /posts/2021/01/notes-General Linear Regression/
+permalink: /posts/2021/01/notes-General Linear Regression 1/
 tags:
   - Models
   - Machine Learning
@@ -12,37 +12,185 @@ tags:
 
 Here are the notes for general linear regression. 
 
-We shall also put the notes in goodnotes here
-
-# General Linear Regression
 
 
+# General Linear Regression 1
 
-### simple linear regression
+## 1.What is Linear Regression?
 
-1.what is regression for?
+1) It is one of the most well known/understand algorithm in statistics and machine learning
 
-关系，自身的，和prediction的；
+2) Linear regression is a **linear model​**, which a linear relationship between the input $X$ and output $Y$. More technical, we can consider $Y$ can be a **linear combination** of $X$
 
-2. RSS（residual sum of sqaures）
+Quote:  我们的目的就是找到一条直线，使所有我们之前input的点到这条直线的距离最小。
 
-3. assessing the accuracy of the coefficient estimation： $\hat{\beta}_1+/-2SE(\hat{\beta}_1)$ (confidence interval)
+3) The representation of simpliest linear regression can be written as 
+$$
+Y= \beta_0+\beta_1X+\epsilon
+$$
+4) In statistics, this belongs to the parametric model, i.e. it has the parameter $\beta_0$ and $\beta_1$
 
-4. hypothesis test: null hypothesis $\hat{\beta}_1=0$
+(这里当然最好是$Y= \beta_0+\beta_1X$,，但是没办法我们有$\epsilon$,（但是我们知道它是normal）)
 
-   $t=\frac{\hat{\beta}_1-0}{SE(\hat{\beta}_1)}$
+so, what is our target? 
 
-$t$ distribution with $n-2$ degrees of freedom assuming $\beta_1=0$
+为了找$Y$ 和$X$的关系——Find the best ${\beta}_0$ and ${\beta}_1$——find total error 最小（loss function）——find Least square
 
-$p$-value
+## 2. The keys
 
-5. assessing the overall accuracy
+### 2.1 How to determine this model?(估计参数)
 
- $R^2=\frac{TSS-RRR}{TSS}$, where  $TSS$ is total sum of squares, $RSS$ is the residual sum of squares
+#### 2.1.1 Loss funtion？（we can link the more general case for the loss function）
 
- 当是simple regression时，他相同于correlation
+​	1. 如何我们要知道我们好不好呢？就需要看看error
+
+​		$Error=|y_i-y_i^{'}|$
+
+	2. error 可以变化吗？可以,　但是为了好计算所以用squre
+ 	3. loss function=total error
+
+#### 2.1.2.最小二乘法
+
+$$
+Loss=\sum_{i=1}^{n} error^2=\sum_{i=1}^{n}(y_i-\beta_0+\beta_1X_i)^2
+$$
+
+1. 这里不一定要平方，但是平方和可以找到某种意义上的最好值
+
+   2. 总的误差的平方最小的y就是真值，这个假设在误差是在随机波动下是最优的
+
+   3. 
+
+         1. 所以我们可以来找 
+            $$
+            Loss =\min_{\beta_0,\beta_1} \sum_{i=1}^{n}(y_i-\beta_0+\beta_1X_i)^2
+            $$
+            
+
+         2. 因着是找 $\beta_0$ and $\beta_1$
+            $$
+            \arg \min_{\beta_0,\beta_1} \sum_{i=1}^{n}(y_i-\beta_0+\beta_1X_i)^2
+            $$
+
+      			3.  所以我是在找$ \beta_0,\beta_1$使得$\sum_{i=1}^{n}(y_i-\beta_0+\beta_1X_i)^2$最小，也就是loss的最小
+
+      			4. 最小二乘法不永远是最优
+
+
+
+**一些提醒：**
+
+1. least square（最小二乘法）是从cost function的角度，利用**距离**的定义建立目标函数；(注意最小二乘法是方法整个loss体系的建立可以link到statsitcal learning theory)
+
+2. 经典的参数估计方法是从**概率的角度**建立目标，比如说最大似然估计MLE（maximum likelihood estimation）
+
+#### 2.1.3 最大似然估计MLE（maximum likelihood estimation）
+
+1. mle是什么？mle is a method of estimating the parameters of a statistical model given obersvation, by finding the parameter values  that maximize the likelihood of making the observation given the parameters.
+   用参数估计的方法，在有了一定的观测值之后，来找parameter，让我们可以最有可能看到我们观测值，让我们可以最大程度放大我们的观测值
+
+2.  如果对于linear regression 来说，相当与用一个方法，**去找穿过最大可能性（最大密度）(尽可能多的概率)的那些点的线上**
+   1. 同时这条线对于x来说是最大可能性分布所在的线（CLT）
+   2. 见图
+
+![linear_regression_noise](./linear_regression_noise.png)
+
+3. 别忘了我们要使用model里的assumption： p(y|x) 是 $mean=\mu=f(x)$(和$x$有关), $variance=\sigma^2$（和$x$无关）的normal distribution（or we consider $\varepsilon \sim N(0,\sigma^2)$）
+
+4. 推导**(面试必考题)**
+
+   1. we know that $Y|X \sim N(\bar{\beta}_0+\bar{\beta}_1X, \sigma^2)$
+
+   2.  
+      $$
+      p(Y_i|X_i)=\frac{1}{\sigma(2\pi)}e^{-\frac{1}{2\sigma^2}(Y_i-\bar{\beta}_0-\bar{\beta}_1X_i)^2}
+      $$
+      
+
+   3. $$
+      L(\bar{\beta}_0,\bar{\beta}_1,\sigma^2)=p(Y_1,\cdots,Y_n|X_1,\cdots,X_n)=\frac{1}{\sigma^{n}(2\pi)^{n/2}}e^{-\frac{1}{2\sigma^2}\sum_{i=1}^n(Y_i-\bar{\beta}_0-\bar{\beta}_1X_i)^2}
+      $$
+
+      under the assumption $(X_1,Y_1),\cdots, (X_n,Y_n)$ are independent
+
+      where $L(\bar{\beta}_0,\bar{\beta}_1,\sigma^2)=p(Y_1,\cdots,Y_n|X_1,\cdots,X_n)=p(Y_1|X_1,\cdots,X_n)\cdots p(Y_n|X_1,\cdots,X_n) =p(Y_1|X_1)p(Y_2|X_2)\cdots p(Y_n|X_n)$
+
+   4. the corresponding the log function:(我只关心parameter，log函数不影响单调等数学性质)
+      $$
+      \log L(\bar{\beta}_0,\bar{\beta}_1,\sigma^2)=-n\log(\sqrt{2\pi}\sigma)-\frac{1}{2\sigma^2}\sum_{i=1}^n(Y_i-\bar{\beta}_0-\bar{\beta}_1X_i)^2
+      $$
+      
+
+   5. 所以我们要找的就是
+      $$
+      \arg \max -\sum_{i=1}^n(Y_i-\bar{\beta}_0-\bar{\beta}_1X_i)^2
+      $$
+      i.e. 
+      $$
+      \arg \min \sum_{i=1}^n(Y_i-\bar{\beta}_0-\bar{\beta}_1X_i)^2
+      $$
+      
+
+
+
+##### 两者关系？
+
+	1. 当他们在linear regression下的assumption下，这两个方法得到结果是相通的
+ 	2. one is from statistics, and the other one is from optimization
+
+
+
+##### 一点提醒：
+
+1. noise是数据造成的，是inherent bias. error是模型造成的，是人为的。是两个不同的概念
+
+
+
+
+
+#### 2.2 How is the performance of this model?（这个是来看模型自己的好坏，评价自己的参数）
+
+我们只能系统的保证其不会偏差（$E(Y)=\mu$)
+
+Consider 这个问题，我们需要link到统计上的假设检验问题
+
+ null hypothesis : $\beta_1=0$
+
+1. 目的是从统计上来判断这组数据和population相差多少，assessing the accuracy of the coefficient estimation,可以使用 $p$-value 或者是 confidence interval $\hat{\beta}_1 \pm 2SE(\hat{\beta}_1)$
+2. 选择的统计量 $t=\frac{\hat{\beta}_1-0}{SE(\hat{\beta}_1)}$ 
+   $t$ distribution with $n-2$ degrees of freedom assuming $\beta_1=0$
+
+
+
+#### 2.3 How can we compare this model with others model?
+
+(这个相当于模型外的判断模型的好坏 i.e. the extent to which the model fits the data)
+
+1. assessing the overall accuracy
+2. $RSE=\sqrt{\frac{1}{n-2}RSS}=\sqrt{\frac{1}{n-2}\sum_i^{n}(y_i-\hat{y}_i)^2}$
+
+3.  $R^2=\frac{TSS-RRR}{TSS}=1-\frac{RSS}{\sum_i^{n}(y_i-\hat{y}_i)^2}$, 
+   1. where  $TSS$ is total sum of squares, $RSS$ is the residual sum of squares(对误差的多少)
+   2. 当是simple regression时，他相同于correlation
+   3.  这里相当于 proportion of variability in $Y$ that can be explained using $X$ ($Y$ 的变化中能够被$X$解释的部分的比例 )
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 ### multiple linear regression
+
+We shall also put the notes in goodnotes here
 
 1. interpreint regression coefficients:希望input 时uncorrelated；correlation 会影响；可以单独和output比较
 
@@ -73,48 +221,6 @@ hierarchy：hierarchy principle：if we include an interaction in a model, we sh
 
 
 
-### Logistic Regression
-
-1. 
-2. Linear discriminant analysis 线性判别分析 (LDA)是对费舍尔的线性鉴别方法的归纳，这种方法使用统计学，模式识别和机器学习方法，试图找到两类物体或事件的特征的一个线性组合，以能够特征化或区分它们。所得的组合可用来作为一个线性分类器，或者，更常见的是，为后续的分类做降维处理。
-3. LDA与方差分析（ANOVA）和回归分析紧密相关，这两种分析方法也试图通过一些特征或测量值的线性组合来表示一个因变量。然而，方差分析使用类别自变量和连续数因变量，而判别分析连续自变量和类别因变量（即类标签）。逻辑回归和概率回归比方差分析更类似于LDA，因为他们也是用连续自变量来解释类别因变量的。LDA的基本假设是自变量是正态分布的，当这一假设无法满足时，在实际应用中更倾向于用上述的其他方法。
-
-
-
-### Ridge regression/Lasso regression
-
-
-
-1. **model interpretability**：by removing irrelevant features- that is, by setting the corresponding coefficient estimates to zero-- we can obtain a model that is more easily interpreted. We will present some approaches for automatically performing **feature selection.**
-2. **predictive performance**：especially when $p>n$ to control the variance.
-3. Three methods:
-
-**Subset selection:** we identify a subset of the $p$ predictors that we believe to be related to the response. We then fit a model using least squares on the reduced set of variables:(相当于你选一个度量单位，然后以此来选择)
-
-1. 一个个去选，你到底要几个feature，基于smallest RSS/$C_p$/AIC/BIC/adjusted $R^2$
-2. Overfitting&stepwise methods, 
-3. Forward/backward stepwise selection
-4. estimating test error: two approach: 
-   1. smallest **RSS/$C_p$/AIC/BIC/adjusted $R^2$**
-   2. Validation/cross varidation??
-
-**Shrinkage:** we fit a model involving all $p$ predictors, but the estimated coefficients are shrunken towards zero relative to the least squares estimates. This shrinkage (regularization) has the effect of reducing variance and can also perform variable selection.(shrinkage，相当于渐进，直到消失)
-
-1. Ridge regression:$\sum_{i=1}^n(y_i-\beta_0-\sum_{j=1}^p\beta_j x_{ij})^2+\lambda\sum_{j=1}^p \beta_j^2$
-2. Ridge regression之前最好先stadardizing the predictors；因为substantially实质上，不同的scale会导致不同的coefficient
-3. Why does ridge regression improve over least squares？
-4. Lasso regression:$\sum_{i=1}^n(y_i-\beta_0-\sum_{j=1}^p\beta_j x_{ij})^2+\lambda\sum_{j=1}^p \|\beta_j\|$
-5. Lasso regression：overcome the disadvantage（包含所有的input/predictors 在最后的模型里面）；这个用的$l_1$ penalty
-6. Lasso regression: yields sparse models, models that involve only a subset of the variables
-7. Lasso regression: performs variable selction///select a good value of $\lambda$ for the lasso is critical///cross-validation is again the method of choice//MSE smallest
-8. tuning parameter:对于一个sample，用cross validation
-
-**Dimension reduction**: we project the $p$ predictors into $M$-dimensional subspace, where $M<p$. This is achieve by computing $M$ different linear combinations or projections, of the variables. Then these $M$ projections are used as predictors to fit a linear regression model by least squares.(把$p$压缩$M$)
-
-1. PCA；2. transform； 3。partial least square
-
-
-
 
 
 ### Gradient descent简单的解释
@@ -133,41 +239,12 @@ Reference:
 
 1) books: an introduction to statistical learning
 
+2) notes in Good notes:
+
+3）上课笔记lai
 
 
 
-
-
-
-
-
-# SVM
-
-1.refer to your publications
-
-$E((w^Tx+b,0)_{\max})$?
-
-2. Maximum margin classifier
-
-   $\max \frac{1}{\|w\|},\qquad s.t. y_i(w^Tx_i+b)\geq 0,\qquad i=1,\cdots,n$
-
-3. $\min \frac{1}{2}\|w\|^2,\qquad s.t. y_i(w^Tx_i+b)\geq 1,\qquad i=1,\cdots,n$
-
-   Dual  $\mathcal{L}(w,b,a)=\frac{1}{2}\|w\|^2-\sum_{i=1}^n \alpha_i(y_i(w^Tx_i+b)-1)$ 变形后
-
-   $\mathcal{L}(w,b,a)=\sum_{i=1}^n\alpha_i-\frac{1}{2}\alpha_i\alpha_jy_i y_jx_i^T x_j$ And $w=\sum_{i=1}^n\alpha_iy_ix_i$
-
-   dual problem 
-
-4. 换成核估计
-
-   $f(x)=\sum_{i=1}^Nw_i\phi_i(x)+b$ 转换成为 $f(x)=\sum_{i=1}^l\alpha_i y_i \langle \phi(x_i), \phi(x) \rangle+b$
-
-$\alpha$ 可以由dual 来求
-
-$\max_{\alpha}\sum_{i=1}^n \alpha_i-\frac{1}{2}\sum_{i,j=1}^n\alpha_i\alpha_jy_iy_j\langle \phi(x_i)\phi(x_j)\rangle \qquad s.t. \alpha_i \geq 0,i=1,\cdots, n; \sum_{i=1}^n\alpha_iy_i=0$ 
-
-$\max_{\alpha}\sum_{i=1}^n \alpha_i-\frac{1}{2}\sum_{i,j=1}^n\alpha_i\alpha_jy_iy_jx_ix_j \qquad s.t. \alpha_i \geq 0,i=1,\cdots, n; \sum_{i=1}^n\alpha_iy_i=0$ 
 
 
 

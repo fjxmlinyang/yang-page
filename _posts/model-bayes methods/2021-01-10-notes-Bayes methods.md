@@ -86,6 +86,141 @@ $$h_{nb}(x)=\arg \max_{c \in \mathcal{Y}}P(c)\Pi_{i=1}^d P(x_i|c)$$
 
 
 
+#### 一个关于条件概率的例子
+
+1) 如何理解调节因子
+
+
+
+#### 实际例子：fraud activity detection
+
+社交网络公司的判断异常用户，对于用户的行为进行一个detection。
+
+(比如说不看广告的账号,很正常这个对整个运营是干扰。ex如果你要做推广。。)
+
+Prior information : $C_0=0.6$ , $C_1=0.1$ （两种fraud，僵尸号，水军）
+
+Features:(blogs量，朋友量，头像)
+
+$F_1$:
+
+$F_2$:
+
+$F_3$:
+
+
+
+1)
+
+What we shall use? 条件概率$P(C|A)=\frac{P(C)P(A|C)}{P(A)}$
+
+if we know F_1=small, F_2=medium, F_3=real ,can we tell which type of fraud?
+
+we need to find $P(C| F_1, \cdots, F_n)$
+
+$P(C| F_1, \cdots, F_n)=\frac{P(C)P(F_1,\cdots,F_n|C)}{P(F_1,\cdots,F_n)}$
+
+ where $P(F_1,\cdots,F_n|C)=P(F_1|C)P(F_2|C,F_1)\cdots P(F_n|C, F_1,\cdots,F_{n-1})$
+
+Then under the assumption of conditional independent
+
+we have the $P(F_1,\cdots, F_n|C)=P(F_1|C)P(F_2|C)\cdots F(F_n|C)$
+
+2) how to calculate? 
+
+Put in.
+
+Notes：
+
+1）我们只关心相对之间的概率，而不是绝对的概率
+
+2）所以选择一个threshold的时候要小心，否则可能哪一类都不属于
+
+
+
+
+
+
+
+
+
+# Basic Probability
+
+#### randomness?
+
+1. the probabiltiy distribution ss a description of a random phenomeon
+
+#### random variable?
+
+1. r.v.
+2. Parameter  vs random variable:
+   1. the paraemters are numbers which **helps** uniquely define the proability distribution or model
+   2. also, it can be determined by the historical data after the parameter estimation methods
+
+#### type of random variable?
+
+1. Discrete：bernoulli？et.c
+
+   Bernoullli？P(Y=y)=p^{y}(1-p)^{1-y}$, $0<p<1$, $y=0,1$
+
+2. Continuous： normal， weibull？
+
+
+
+
+
+
+
+#### cdf/pdf
+
+pdf是cdf的求导，cdf是pdf的积分，这个相当于是密度和面积（体积）的概念。
+
+
+
+
+
+#### CLT/SLLN
+
+从无到有
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+reference:
+
+1) code part: link Dataquest
+
+
+
 
 
 ### Bayesian Network
