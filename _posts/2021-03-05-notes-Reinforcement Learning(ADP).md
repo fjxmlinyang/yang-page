@@ -34,15 +34,17 @@ $S_t=(R_t,W_t)$,
 
 where $R_t$ is a variable describing the storage amount at time $t$, 
 
-and $W_t$ is the current level of exogenous information, i.e. $W_t=(P_t, D_t)$, here $P_t$ is the price given by our time series model, and $D_t$ is the demand for electricity.
+and $W_t$ is the current level of exogenous information, i.e. $W_t=(P_t, D_t)$, here $P_t$ is the price given by our time series model, and $D_t=(Gen_t, Pump_t)$ is the demand for electricity.
 
 ### Control/Decision/Action
 
-Consider the decision , we denote $x_t$ as the control/action/decision, where $x_t=(pump_t,gen_t) \in \mathcal{X_t}(R_t,W_t)$.
+Consider the decision , we denote $x_t$ as the control/action/decision, where $x_t=(pump_t,gen_t) \in \mathcal{X_t}(R_t,W_t)$, describing the pump and gen amount.
 
-At the same time, we have the following feasible region:
+At the same time, we have the following feasible region for $x_t$:
 
+1. 
 
+$0 \leq gen_t  \leq Gen_t$ and $0 \leq pump_t \leq Pump_t$
 
 
 
