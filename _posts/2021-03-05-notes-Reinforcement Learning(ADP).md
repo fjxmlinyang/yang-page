@@ -16,7 +16,7 @@ There are three pigments in dynamic programming, one is the state variable. The 
 
 
 
-###### Background
+## Background
 
 Our problem can be considered into the economic dispatch problem. If in a more general way, this is a resource allocation problem. We are trying to distribute energy resources( such as electric power grid and other forms of energy allocation wind/gas/heat) to serve different types of demand. [[1]](#1). 
 
@@ -24,11 +24,23 @@ Our problem can be considered into the economic dispatch problem. If in a more g
 
 
 
-###### Model
+## Model
 
-Consider the decision , we denote $x_t=$  
+The problem can be formulated as following:
 
+### State
 
+$S_t=(R_t,W_t)$, 
+
+where $R_t$ is a variable describing the storage amount at time $t$, 
+
+and $W_t$ is the current level of exogenous information, i.e. $W_t=(P_t, D_t)$, here $P_t$ is the price given by our time series model, and $D_t$ is the demand for electricity.
+
+### Control/Decision/Action
+
+Consider the decision , we denote $x_t$ as the control/action/decision, where $x_t=(pump_t,gen_t) \in \mathcal{X_t}(R_t,W_t)$.
+
+At the same time, we have the following feasible region:
 
 
 
