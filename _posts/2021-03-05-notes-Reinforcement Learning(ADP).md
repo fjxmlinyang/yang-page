@@ -42,7 +42,8 @@ Consider the decision , we denote $x_t$ as the control/action/decision, where $x
 
 At the same time, we have the following feasible region for $x_t$:
 
-1. 
+1. $Ax_t=b_t(R_t, W_t)$ 当作本身的约束，和storage还有model内部的不确定性
+2. 
 
 $0 \leq gen_t  \leq Gen_t$ and $0 \leq pump_t \leq Pump_t$
 
