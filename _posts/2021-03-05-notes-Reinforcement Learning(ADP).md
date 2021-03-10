@@ -24,6 +24,14 @@ Our problem can be considered into the economic dispatch problem. If in a more g
 
 
 
+###### Model
+
+Consider the decision , we denote $x_t=$  
+
+
+
+
+
 
 
 
