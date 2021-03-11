@@ -48,8 +48,10 @@ so, what is our target?
 
 ​		$Error=\left| y_i-y_i^{'}\right|$
 
-	2. error 可以变化吗？可以,　但是为了好计算所以用squre
- 	3. loss function=total error
+2. error 可以变化吗？可以,　但是为了好计算所以用squre
+3. loss function=total error
+
+
 
 #### 2.1.2.最小二乘法
 
@@ -68,17 +70,14 @@ $$
             Loss =\min_{\beta_0,\beta_1} \sum_{i=1}^{n}(y_i-\beta_0+\beta_1X_i)^2
             $$
             
-
-         2. 因着是找 $\beta_0$ and $\beta_1$
+2. 因着是找 $\beta_0$ and $\beta_1$
             $$
             \arg \min_{\beta_0,\beta_1} \sum_{i=1}^{n}(y_i-\beta_0+\beta_1X_i)^2
             $$
-
-      			3.  所以我是在找$ \beta_0,\beta_1$使得$\sum_{i=1}^{n}(y_i-\beta_0+\beta_1X_i)^2$最小，也就是loss的最小
-
-      			4. 最小二乘法不永远是最优
-
-
+         
+3. 所以我是在找$ \beta_0,\beta_1$使得$\sum_{i=1}^{n}(y_i-\beta_0+\beta_1X_i)^2$最小，也就是loss的最小
+      
+4. 最小二乘法不永远是最优
 
 **一些提醒：**
 
@@ -108,23 +107,21 @@ $$
       p(Y_i\bigm|X_i)=\frac{1}{\sigma(2\pi)}e^{-\frac{1}{2\sigma^2}(Y_i-\bar{\beta}_0-\bar{\beta}_1X_i)^2}
       $$
       
-
-   3. $$
+3. $$
       L(\bar{\beta}_0,\bar{\beta}_1,\sigma^2)=p(Y_1,\cdots,Y_n\bigm|X_1,\cdots,X_n)=\frac{1}{\sigma^{n}(2\pi)^{n/2}}e^{-\frac{1}{2\sigma^2}\sum_{i=1}^n(Y_i-\bar{\beta}_0-\bar{\beta}_1X_i)^2}
       $$
-
-      under the assumption $(X_1,Y_1),\cdots, (X_n,Y_n)$ are independent
-
-      where $L(\bar{\beta}_0,\bar{\beta}_1,\sigma^2)=p(Y_1,\cdots,Y_n\bigm|X_1,\cdots,X_n)=p(Y_1\bigm|X_1,\cdots,X_n)\cdots p(Y_n\bigm|X_1,\cdots,X_n) =p(Y_1\bigm|X_1)p(Y_2\bigm|X_2)\cdots p(Y_n\bigm|X_n)$
-
-   4. the corresponding the log function:(我只关心parameter，log函数不影响单调等数学性质)
+   
+   under the assumption $(X_1,Y_1),\cdots, (X_n,Y_n)$ are independent
+   
+   where $L(\bar{\beta}_0,\bar{\beta}_1,\sigma^2)=p(Y_1,\cdots,Y_n\bigm|X_1,\cdots,X_n)=p(Y_1\bigm|X_1,\cdots,X_n)\cdots p(Y_n\bigm|X_1,\cdots,X_n) =p(Y_1\bigm|X_1)p(Y_2\bigm|X_2)\cdots p(Y_n\bigm|X_n)$
+   
+4. the corresponding the log function:(我只关心parameter，log函数不影响单调等数学性质)
       $$
       \log L(\bar{\beta}_0,\bar{\beta}_1,\sigma^2)=-n\log(\sqrt{2\pi}\sigma)-\frac{1}{2\sigma^2}\sum_{i=1}^n(Y_i-\bar{\beta}_0-\bar{\beta}_1X_i)^2
       $$
       
-
    5. 所以我们要找的就是
-      $$
+   $$
       \arg \max -\sum_{i=1}^n(Y_i-\bar{\beta}_0-\bar{\beta}_1X_i)^2
       $$
       i.e. 
@@ -137,8 +134,8 @@ $$
 
 ##### 两者关系？
 
-	1. 当他们在linear regression下的assumption下，这两个方法得到结果是相通的
- 	2. one is from statistics, and the other one is from optimization
+1. 当他们在linear regression下的assumption下，这两个方法得到结果是相通的
+2. one is from statistics, and the other one is from optimization
 
 
 
