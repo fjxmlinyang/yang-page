@@ -26,11 +26,11 @@ $E((w^Tx+b,0)_{\max})$?
 
 2. Maximum margin classifier
 
-   $\max \frac{1}{\|w\|},\qquad s.t. y_i(w^Tx_i+b)\geq 0,\qquad i=1,\cdots,n$
+   $\max \frac{1}{\vert \vert w \vert \vert},\qquad s.t. y_i(w^Tx_i+b)\geq 0,\qquad i=1,\cdots,n$
 
-3. $\min \frac{1}{2}\|w\|^2,\qquad s.t. y_i(w^Tx_i+b)\geq 1,\qquad i=1,\cdots,n$
+3. $\min \frac{1}{2}\vert\vert w \vert\vert^2,\qquad s.t. y_i(w^Tx_i+b)\geq 1,\qquad i=1,\cdots,n$
 
-   Dual  $\mathcal{L}(w,b,a)=\frac{1}{2}\|w\|^2-\sum_{i=1}^n \alpha_i(y_i(w^Tx_i+b)-1)$ 变形后
+   Dual  $\mathcal{L}(w,b,a)=\frac{1}{2}\vert \vert w\vert \vert^2-\sum_{i=1}^n \alpha_i(y_i(w^Tx_i+b)-1)$ 变形后
 
    $\mathcal{L}(w,b,a)=\sum_{i=1}^n\alpha_i-\frac{1}{2}\alpha_i\alpha_jy_i y_jx_i^T x_j$ And $w=\sum_{i=1}^n\alpha_iy_ix_i$
 

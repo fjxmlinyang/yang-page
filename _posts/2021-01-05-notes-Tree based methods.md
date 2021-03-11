@@ -23,7 +23,7 @@ as terminal nodes or leaves of the tree.
 
 4)  link to the GAM& linear regression
 
-$E[Y\bigm|X_1,\cdots,X_p]=\alpha+f_1(X_1)+\cdots+f_p(X_p)$  Generalized additive model(GAM)
+$E[Y\vert X_1,\cdots,X_p]=\alpha+f_1(X_1)+\cdots+f_p(X_p)$  Generalized additive model(GAM)
 
 
 
@@ -117,24 +117,19 @@ decision tree——1）boosting&Adaboosting（代表）；2）bagging&random for
     \hat{f}_{bag}(x)=\frac{1}{B}\sum_{b=1}^B \hat{f}^{\ast b}(x)
     $$
 
+主要算法**random forest**:
 
-    主要算法**random forest**:
-
-3. Random forests provide an improvement over bagged trees by way of a small tweak that decorrelates the trees.a random sample of
+1. Random forests provide an improvement over bagged trees by way of a small tweak that decorrelates the trees.a random sample of
    *$m$ predictors is chosen as split candidates from the full set of p predictors.*
    *The split is allowed to use only one of those m predictors.*
 
-4. A fresh sample of $m$ predictors is taken at each split, and typically we choose $m \approx \sqrt{p} $—thatis , the number of predictors considered at each split is approximately equal to the square root of the total number of predictors
-
-5. **The main difference** between bagging and random forests is the choice
+2. A fresh sample of $m$ predictors is taken at each split, and typically we choose $m \approx \sqrt{p} $—thatis , the number of predictors considered at each split is approximately equal to the square root of the total number of predictors
+3. **The main difference** between bagging and random forests is the choice
    of predictor subset size $m$.
-
-6. We can think of this process as **decorrelating** the trees, thereby making the average of the resulting trees less variable and hence more reliable.
-
-7. averaging many highly correlated quantities does not lead to as large of a reduction in variance as averaging many uncorrelated quantities.
+4. We can think of this process as **decorrelating** the trees, thereby making the average of the resulting trees less variable and hence more reliable.
+5. averaging many highly correlated quantities does not lead to as large of a reduction in variance as averaging many uncorrelated quantities.
    **感想：说白了就是你用了少的sample自然reduce variance? 相当于RF就是控制m 你重复的此书**
-
-8. out of bag estimate?
+6. out of bag estimate?
 
 
 

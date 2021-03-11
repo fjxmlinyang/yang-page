@@ -67,7 +67,7 @@ Continue previous linear regression. Here we would like to introduce Logistic re
 1. Ridge regression:$\sum_{i=1}^n(y_i-\beta_0-\sum_{j=1}^p\beta_j x_{ij})^2+\lambda\sum_{j=1}^p \beta_j^2$
 2. Ridge regression之前最好先stadardizing the predictors；因为substantially实质上，不同的scale会导致不同的coefficient
 3. Why does ridge regression improve over least squares？
-4. Lasso regression:$\sum_{i=1}^n(y_i-\beta_0-\sum_{j=1}^p\beta_j x_{ij})^2+\lambda\sum_{j=1}^p \|\beta_j\|$
+4. Lasso regression:$\sum_{i=1}^n(y_i-\beta_0-\sum_{j=1}^p\beta_j x_{ij})^2+\lambda\sum_{j=1}^p \vert  \vert \beta_j \vert \vert$
 5. Lasso regression：overcome the disadvantage（包含所有的input/predictors 在最后的模型里面）；这个用的$l_1$ penalty
 6. Lasso regression: yields sparse models, models that involve only a subset of the variables
 7. Lasso regression: performs variable selction///select a good value of $\lambda$ for the lasso is critical///cross-validation is again the method of choice//MSE smallest
