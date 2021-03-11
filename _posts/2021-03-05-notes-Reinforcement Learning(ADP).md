@@ -148,7 +148,7 @@ $$
 & 0 \leq pump_t \leq Pump_t, \\
 & R_{t+1}=R_t+gen_t-pump_t \\
 & \underline{R}\leq R_t \leq \bar{R} \\
-& \sum_{r=1}^{B^R}y_{tr}\rho =f^{x}(R_t,x_t) = R_t^x (这个将来可以sample)
+& \sum_{r=1}^{B^R}y_{tr}\rho =f^{x}(R_t,x_t) = R_t^x？ (这个将来可以sample)
 \end{align}
 $$
 
