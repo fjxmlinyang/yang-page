@@ -1,5 +1,5 @@
 ---
-title: 'notes-Model Performance'
+title: 'notes-Reinforcement Learning(ADP)'
 date: 2021-01-25
 permalink: /posts/2021/03/notes-Reinforcement Learning(ADP)/
 tags:
