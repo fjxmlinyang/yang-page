@@ -53,7 +53,7 @@ so, what is our target?
 
 
 
-#### 2.1.2.最小二乘法
+#### 2.1.2.最小二乘法least square推导loss function
 
 $$
 Loss=\sum_{i=1}^{n} error^2=\sum_{i=1}^{n}(y_i-\beta_0+\beta_1X_i)^2
@@ -69,14 +69,14 @@ $$
             $$
             Loss =\min_{\beta_0,\beta_1} \sum_{i=1}^{n}(y_i-\beta_0+\beta_1X_i)^2
             $$
-            
+   
 2. 因着是找 $\beta_0$ and $\beta_1$
             $$
             \arg \min_{\beta_0,\beta_1} \sum_{i=1}^{n}(y_i-\beta_0+\beta_1X_i)^2
             $$
-         
+        
 3. 所以我是在找$ \beta_0,\beta_1$使得$\sum_{i=1}^{n}(y_i-\beta_0+\beta_1X_i)^2$最小，也就是loss的最小
-      
+   
 4. 最小二乘法不永远是最优
 
 **一些提醒：**
@@ -85,7 +85,7 @@ $$
 
 2. 经典的参数估计方法是从**概率的角度**建立目标，比如说最大似然估计MLE（maximum likelihood estimation）
 
-#### 2.1.3 最大似然估计MLE（maximum likelihood estimation）
+#### 2.1.3 最大似然估计MLE（maximum likelihood estimation）推导loss function
 
 1. mle是什么？mle is a method of estimating the parameters of a statistical model given obersvation, by finding the parameter values  that maximize the likelihood of making the observation given the parameters.
    用参数估计的方法，在有了一定的观测值之后，来找parameter，让我们可以最有可能看到我们观测值，让我们可以最大程度放大我们的观测值
@@ -106,7 +106,7 @@ $$
       $$
       p(Y_i\vert X_i)=\frac{1}{\sigma(2\pi)}e^{-\frac{1}{2\sigma^2}(Y_i-\bar{\beta}_0-\bar{\beta}_1X_i)^2}
       $$
-      
+   
 3. $$
       L(\bar{\beta}_0,\bar{\beta}_1,\sigma^2)=p(Y_1,\cdots,Y_n\vert X_1,\cdots,X_n)=\frac{1}{\sigma^{n}(2\pi)^{n/2}}e^{-\frac{1}{2\sigma^2}\sum_{i=1}^n(Y_i-\bar{\beta}_0-\bar{\beta}_1X_i)^2}
       $$
@@ -123,12 +123,12 @@ $$
    5. 所以我们要找的就是
    $$
       \arg \max -\sum_{i=1}^n(Y_i-\bar{\beta}_0-\bar{\beta}_1X_i)^2
-      $$
+   $$
       i.e. 
-      $$
+   $$
       \arg \min \sum_{i=1}^n(Y_i-\bar{\beta}_0-\bar{\beta}_1X_i)^2
-      $$
-      
+   $$
+   
 
 
 
@@ -147,7 +147,7 @@ $$
 
 
 
-#### 2.2 How is the performance of this model?（这个是来看模型自己的好坏，评价自己的参数）
+### 2.2 How is the performance of this model?（这个是来看模型自己的好坏，评价自己的参数）
 
 我们只能系统的保证其不会偏差（$E(Y)=\mu$)
 
@@ -161,7 +161,7 @@ Consider 这个问题，我们需要link到统计上的假设检验问题
 
 
 
-#### 2.3 How can we compare this model with others model?
+### 2.3 How can we compare this model with others model?
 
 (这个相当于模型外的判断模型的好坏 i.e. the extent to which the model fits the data)
 
