@@ -111,7 +111,7 @@ Since $(x_1,y_1),\cdots(x_n,y_n)$ are linear independent.(obersvation is indepen
 
 ​	a.  $P(Y_1, \cdots, Y_n\vert X_1,\cdots, X_n)=\Pi_{i=1}^{n}P(Y_i\vert X_1,\cdots,X_n)$
 
-​	b. $P(Y_i \vert X_1,\cdots,X_n)=P(Y_i|X_i)$
+​	b. $P(Y_i \vert X_1,\cdots,X_n)=P(Y_i \vert X_i)$
 
 Therefore 
 $$
@@ -128,12 +128,6 @@ $$
 \arg \min_{\beta}\log L(\hat\beta_0,\hat \beta_1)= \sum_{i=1}^{n}[-y_i \log(h_{\beta}(x_i)-(1-y_i)\log(1-h_{\beta}(x_i))] \\
 \end{align}
 $$
-
-### 
-
-
-
-
 
 
 
