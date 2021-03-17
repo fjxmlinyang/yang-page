@@ -123,9 +123,11 @@ $$
 V_t^{x}(R_t^x,W_t)=\mathbb{E}[V_{t+1}^{\ast}(R_{t+1},W_{t+1})|R_t^{x},W_t]
 $$
 
-
-
-
+注意这里，你来自未来的potential value是不固定的所以可以由下面这个式子决定。那我们需要的就是，
+$$
+\bar{V}_t(R_t^x, W_t) \rightarrow V_t^x(R_t^x,W)
+$$
+where $\bar{V}_t(R_t^x,W_t)$ is a piecewise linear approximation function.(就是后面的$\sum_{r=1}^{B^R}v_t(r,W_t)y_{tr}$, 注意这里是一个和x没有任何关系的一个式子（换成是$y_{t}$））
 
 
 ### Value function approximation by piecewise linear value function
@@ -147,11 +149,21 @@ $$
 \begin{align}
 & 0 \leq gen_t  \leq Gen_t, \\ 
 & 0 \leq pump_t \leq Pump_t, \\
-& R_{t+1}=R_t+gen_t-pump_t \\
+& R_{t}=R_{t-1}+gen_{t}-pump_{t} \\
 & \underline{R}\leq R_t \leq \bar{R} \\
-& \sum_{r=1}^{B^R}y_{tr}\rho =f^{x}(R_t,x_t) = R_t^x？ (这个将来可以sample)
+& \sum_{r=1}^{B^R}y_{tr}\rho =f^{x}(R_t,x_t) = R_t^x？ (这个将来可以sample\&用来catch将来的soc的？)
 \end{align}
 $$
+
+
+
+
+
+How to learn?
+
+
+
+
 
 
 
@@ -160,8 +172,6 @@ Reference:
 
 ```
 ## References
-<a id="1">[1]</a> 
-Juliana Nascimento,Warren B Powell. (2013). 
-An optimal approximate dynamic programming algorithm for the economic dispatch problem with grid-level storage, IEEE Transactions on Automatic Control, to appear print.
+Juliana Nascimento,Warren B Powell. (2013). An optimal approximate dynamic programming algorithm for the economic dispatch problem with grid-level storage, IEEE Transactions on Automatic Control, to appear print.
 ```
 
