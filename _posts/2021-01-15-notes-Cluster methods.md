@@ -32,7 +32,7 @@ Question: is it related to kernel method?
 
 ​	
 $$
-c^{(i)}:=\arg \min_{j}\|x^{i}-\mu_j\|^2
+c^{(i)}:=\arg \min_{j}\vert \vert x^{i}-\mu_j \vert \vert ^2
 $$
 **将每个训练样本$x^{(i)}$分配到距离最近的中心$\mu_j$**
 
@@ -44,7 +44,7 @@ $$
 
 3）收敛情况，
 
-3-1)定义 **distortion function**： $J(c,\mu)=\sum_{i=1}^m\|x^{(i)}-\mu_{c^{(i)}}\|^2$
+3-1)定义 **distortion function**： $J(c,\mu)=\sum_{i=1}^m \vert \vert x^{(i)}-\mu_{c^{(i)}}\vert \vert^2$
 
 3-2)不一定保证最优，因为是非凸函数
 
