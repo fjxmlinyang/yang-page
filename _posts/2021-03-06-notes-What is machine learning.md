@@ -79,25 +79,11 @@ deep learning：
 
 
 
-bayes： adjusted coeffiency
+# Probability vs Statistics
 
-解释方式1
-
-​	 $P(B \vert A) = P(B) \frac{P(A|B)}{P(A)}$
-
-​	新信息出现后B的概率=B原先的概率*信息的调整（$>1, \ , =1 \ , <1$）
-
-​	$\frac{P(A|B)}{P(A)}=1$说明是独立
-
-​	$\frac{P(A|B)}{P(A)}>1$
-
-​	$\frac{P(A|B)}{P(A)}<1$
-
- 解释方式2
-
-​	 $P(B \vert A) = P(A\vert B) \frac{P(B)}{P(A)}$
-
-​	对概率的偏见，
+- in probability theory we consider some underlying process which has some randomness or uncertainty modeled by random variables, and we figure out what happens. It is a numerical description of the likelihood of an event.
+- in statistics we observe something that has happened, and try to figure out what underlying process would explain those observations. It concerns the collection, organization, displaying analysis, interpretation and presentation of data.
+- 概率是根据你知道的背后的uncertainty来计算轨迹（演绎）。统计是根据观察到的很多的信息，来进行解释/推断（推断）。
 
 
 
