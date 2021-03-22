@@ -71,7 +71,7 @@ where $\xi=(\xi_1,\cdots,\xi_T)$ and $F_t=\sigma(\xi_1,\cdots,\xi_t)$.
 
 Then we define the probability space $(\Omega,\mathcal{F},\mathcal{P})$ and any random variable indexed by $t$ is $\mathcal{F}_t$-measurable
 
-For $R_{t+1}=R_t+A^{s}x_t+\hat{R}_{t+1}$, we have
+For $R_{t+1}=R_t+A^{s}x_t+\hat{R}_{t+1}$, we have（相当于你之前flow流到这个time $t$的总量）
 $$
 R_{t+1}=R_t+gen_t-pump_t
 $$
@@ -92,6 +92,11 @@ we use the concept of the post_decision state denoted $S_{t}^x$, which is the st
 Then $S_t^{x}=(R_t^x,W_t)$, and the corresponding post-decision resource state:
 $$
 R_t^x=f^{x}(R_t,x_t)=R_t+A^{S}x_t
+$$
+
+in our case this is ( 相当于你在time $t$有的量，给将来$t+1$使用)
+$$
+R_{t}^x=R_t?
 $$
 
 
@@ -129,7 +134,6 @@ $$
 $$
 where $\bar{V}_t(R_t^x,W_t)$ is a piecewise linear approximation function.(就是后面的$\sum_{r=1}^{B^R}v_t(r,W_t)y_{tr}$, 注意这里是一个和x没有任何关系的一个式子（换成是$y_{t}$））
 
-
 ### Value function approximation by piecewise linear value function
 
 #### Optimal value function
@@ -151,15 +155,86 @@ $$
 & 0 \leq pump_t \leq Pump_t, \\
 & R_{t}=R_{t-1}+gen_{t}-pump_{t} \\
 & \underline{R}\leq R_t \leq \bar{R} \\
-& \sum_{r=1}^{B^R}y_{tr}\rho =f^{x}(R_t,x_t) = R_t^x？ (这个将来可以sample\&用来catch将来的soc的？)
+& \sum_{r=1}^{B^R}y_{tr}\rho =f^{x}(R_t,x_t) = R_t+A^Sx_t=R_t? (这个将来可以sample\&用来catch将来的soc的？)
 \end{align}
+$$
+
+notes：如果用了$\rho$，相当于每一步最长是$\rho$,$y_{tr} \leq 1$；如果不用$\rho$，相当于你的$y_{tr} \leq \rho$
+
+
+
+## How to learn? SPAR-Storage Algorithm
+
+
+
+#### Step 0: Initialization
+
+1. Initialize $\bar{v}_t^0(W_t)$ for $t=0,\cdots, T-1$, and $W_t \in \mathcal{W}_t$ monotone decreasing
+2. Set $R_{-1}^{x,n}=\bar{r}=k \rho$ for some $k \geq 0$ for all $n \geq 0$
+3. Set $n = 1$
+
+notes：这里的$\bar{v}_t^0(W_t)=(\bar{v}_t^0(1,W_t),\cdots, \bar{v}_t^0(B^R,W_t))$,（固定在$W_t$下），同时是monotone decreasing，文章中说可以设计成0，zhengmao自己选了一个decreasing
+
+
+
+#### Step 1: Sample/ Observe the information sequence $W_0^n,\cdots W_t^n$
+
+##### from step 2 to step 5, we do for $t=0,\cdots, T$
+
+#### Step 2-4:前面的linear approximation的模型I/O
+
+##### Step 2: Compute the pre-decision asset level : 
+
+$$
+R_t^n =R_{t-1}^{x,n} +\hat{R}_t(W_t^n)
+$$
+
+notes: 我们这里就直接update？相当于说借用上一个阶段的？还是
+
+##### Step 3: Find the optimal solution $x_t^n$ 
+
+$$
+\max_{x_t \in \mathcal{X}_t(R_t,W_t^n)}C_t(R_t^n,W_t^n,x_t) +\gamma \bar{V}_t^{n-1}(f^x(R_t^n,x_t))
 $$
 
 
 
+notes:这里要小心，第二个部分是上一个scenario$n-1$的?？why？？？
+
+##### Step 4: Compute the post-decision asset level
+
+ 
+$$
+R_t^{x,n}=f^x(R_t^n,x_t^n)
+$$
+这个就相当于你因着将来，而让现在需要storage多少（和SOC-shadow price curve得出来类似）
+
+#### Step 5: update the slope:
+
+##### If $t < T$:
+
+##### Step 5-1: Observe $\hat{v}_{t+1}^n(R_t^{x,n})$ and $\hat{v}_{t+1}^n(R_t^{x,n}+\rho)$
+
+notes:这里相当于你找出 关于$R-v$ curve 上的两个点，我们用来update斜率，很自然你选择的是两个比较近的点，那公式就用
+$$
+\hat{v}_{t+1}^n(R) =F_t^{\ast}(\bar{v}_{t+1}^{n-1}(W_{t+1}^n), R+\hat{R}_{t+1}(W_{t+1}^n),W_{t+1}^n)-F_t^{\ast}(\bar{v}_{t+1}^{n-1}(W_{t+1}^n), R-1+\hat{R}_{t+1}(W_{t+1}^n),W_{t+1}^n)
+$$
+
+##### Step 5-2: for $W_t\in\mathcal{W_t}$, and $R=1,\cdots,B^R$, update $z_t^n(R,W_t)$:
+
+$$
+z_t^n(R,W_t)= (1-\bar{\alpha}_t^n(R,W_t)) \bar{v}_t^{n-1}(R,W_t)+\bar{\alpha}_t^n(R,W_t)\hat{v}_{t+1}^n(R)
+$$
+
+notes:注意这里的scenario
 
 
-How to learn?
+
+
+
+
+
+
 
 
 
