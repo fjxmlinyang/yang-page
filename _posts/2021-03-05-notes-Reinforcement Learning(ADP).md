@@ -148,7 +148,7 @@ $$
 $$
 where the breakpoints $R=1,\cdots,B^{R}$ and $斜率=v_t(W_t)=(v_t(1,W_t),\cdots,v_t(B^R,W_t))$
 
- 
+
 $$
 \begin{align}
 & 0 \leq gen_t  \leq Gen_t, \\ 
@@ -233,19 +233,7 @@ $$
 z_t^n(R,W_t)= (1-\bar{\alpha}_t^n(R,W_t)) \bar{v}_t^{n-1}(R,W_t)+\bar{\alpha}_t^n(R,W_t)\hat{v}_{t+1}^n(R)
 $$
 
-<<<<<<< HEAD
 notes:注意这里的scenario,一个是 $n-1$，另一个是 $n$.
-=======
-notes:注意这里的scenario的情况
-
-Step 5-3:
-
->>>>>>> b04a124642748cd0ee399bdabc0f8d8870f31c03
-
-where 
-$$
-\bar{\alpha}_t^n(R,W_t)= \alpha_t^n 1_{W_t=W_t^n}(1_{R=R_t^{x,n}}+1_{R=R_t^{x,n}+\rho})
-$$
 
 ##### Step 5-3: perform the projection operation $\bar{v}_t^n= \Pi_{\mathcal{C}}(z_t^n)$
 
@@ -258,7 +246,10 @@ z_t^n(R,W_t),& otherwise. \\
 \end{cases}
 $$
 
-
+where 
+$$
+\bar{\alpha}_t^n(R,W_t)= \alpha_t^n 1_{W_t=W_t^n}(1_{R=R_t^{x,n}}+1_{R=R_t^{x,n}+\rho})
+$$
 
 #### Step 6: Increase $n$ by one and go to step 1
 
