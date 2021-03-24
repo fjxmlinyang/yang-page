@@ -51,7 +51,7 @@ $$
 R_{t+1}=R_t+A^{s}x_t, A^{s}=(1,-1),x_t=({gen_t, pump_t})
 $$
 
-2. $0 \leq x_t \leq u_t(W_t)$ 自己本身的约束，和model外部的关系(和价格没有关系对把？)
+2. $0 \leq x_t \leq u_t(W_t)$ 自己本身的约束，和model外部的关系(和价格没有关系对把？)（换成一个）
 
 $$
 0 \leq gen_t  \leq Gen_t,  0 \leq pump_t \leq Pump_t
@@ -71,7 +71,7 @@ where $\xi=(\xi_1,\cdots,\xi_T)$ and $F_t=\sigma(\xi_1,\cdots,\xi_t)$.
 
 Then we define the probability space $(\Omega,\mathcal{F},\mathcal{P})$ and any random variable indexed by $t$ is $\mathcal{F}_t$-measurable
 
-For $R_{t+1}=R_t+A^{s}x_t+\hat{R}_{t+1}$, we have（相当于你之前flow流到这个time $t$的总量）
+For $R_{t+1}=R_t+A^{s}x_t+\hat{R}_{t+1}$, we have（相当于你之前flow流到这个time $t$的总量）（加上effieiecny）
 $$
 R_{t+1}=R_t+gen_t-pump_t
 $$
@@ -89,7 +89,7 @@ $$
 
 we use the concept of the post_decision state denoted $S_{t}^x$, which is the state of the system at time $t$, right after we have choose a decision $x$.
 
-Then $S_t^{x}=(R_t^x,W_t)$, and the corresponding post-decision resource state:
+Then $S_t^{x}=(R_t^x,W_t)$, and the corresponding post-decision resource state:（swith max &E）
 $$
 R_t^x=f^{x}(R_t,x_t)=R_t+A^{S}x_t
 $$
@@ -155,7 +155,11 @@ $$
 & 0 \leq pump_t \leq Pump_t, \\
 & R_{t}=R_{t-1}+gen_t/\eta^g-{pump}_t \ast \eta^p \\
 & \underline{R}\leq R_t \leq \bar{R} \\
+<<<<<<< HEAD
 & \sum_{r=1}^{B^R}y_{tr}\rho =f^{x}(R_t,x_t)=R_t? (这个将来可以sample\&用来catch将来的soc的？)
+=======
+& \sum_{r=1}^{B^R}y_{tr}\rho =f^{x}(R_t,x_t) =R_t^x? (这个将来可以sample\&用来catch将来的soc的？)
+>>>>>>> b04a124642748cd0ee399bdabc0f8d8870f31c03
 \end{align}
 $$
 
@@ -203,7 +207,7 @@ notes:这里要小心，第二个部分是上一个scenario$n-1$的?？why？？
 
 ##### Step 4: Compute the post-decision asset level
 
- 
+
 $$
 R_t^{x,n}=f^x(R_t^n,x_t^n)
 $$
@@ -229,7 +233,14 @@ $$
 z_t^n(R,W_t)= (1-\bar{\alpha}_t^n(R,W_t)) \bar{v}_t^{n-1}(R,W_t)+\bar{\alpha}_t^n(R,W_t)\hat{v}_{t+1}^n(R)
 $$
 
+<<<<<<< HEAD
 notes:注意这里的scenario,一个是 $n-1$，另一个是 $n$.
+=======
+notes:注意这里的scenario的情况
+
+Step 5-3:
+
+>>>>>>> b04a124642748cd0ee399bdabc0f8d8870f31c03
 
 where 
 $$
