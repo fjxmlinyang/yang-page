@@ -144,18 +144,18 @@ F_t^{\ast}(v_t(W_t),R_t,W_t)=\max_{x_t,y_t}C_t(R_t,W_t,x_t) +\gamma \sum_{r=1}^{
 $$
 which can equal to
 $$
-\max_{x_t,y_t} p_t(gen_t-{pump}_t)+\gamma \sum_{r=1}^{B^R}斜率_t y_{tr}
+\max_{x_t,y_t}\  p_t(gen_t/\eta^g-{pump}_t \ast \eta^p)+\gamma \sum_{r=1}^{B^R}斜率_t y_{tr}
 $$
 where the breakpoints $R=1,\cdots,B^{R}$ and $斜率=v_t(W_t)=(v_t(1,W_t),\cdots,v_t(B^R,W_t))$
 
-s.t.
+ 
 $$
 \begin{align}
 & 0 \leq gen_t  \leq Gen_t, \\ 
 & 0 \leq pump_t \leq Pump_t, \\
-& R_{t}=R_{t-1}+gen_{t}-pump_{t} \\
+& R_{t}=R_{t-1}+gen_t/\eta^g-{pump}_t \ast \eta^p \\
 & \underline{R}\leq R_t \leq \bar{R} \\
-& \sum_{r=1}^{B^R}y_{tr}\rho =f^{x}(R_t,x_t) = R_t+A^Sx_t=R_t? (这个将来可以sample\&用来catch将来的soc的？)
+& \sum_{r=1}^{B^R}y_{tr}\rho =f^{x}(R_t,x_t)=R_t? (这个将来可以sample\&用来catch将来的soc的？)
 \end{align}
 $$
 
@@ -207,7 +207,7 @@ notes:这里要小心，第二个部分是上一个scenario$n-1$的?？why？？
 $$
 R_t^{x,n}=f^x(R_t^n,x_t^n)
 $$
-这个就相当于你因着将来，而让现在需要storage多少（和SOC-shadow price curve得出来类似）
+这个就相当于你因着将来，而让现在需要storage多少（和SOC-shadow price curve得出来类似）(我们没有这这一步)
 
 #### Step 5: update the slope:
 
@@ -217,7 +217,10 @@ $$
 
 notes:这里相当于你找出 关于$R-v$ curve 上的两个点，我们用来update斜率，很自然你选择的是两个比较近的点，那公式就用
 $$
-\hat{v}_{t+1}^n(R) =F_t^{\ast}(\bar{v}_{t+1}^{n-1}(W_{t+1}^n), R+\hat{R}_{t+1}(W_{t+1}^n),W_{t+1}^n)-F_t^{\ast}(\bar{v}_{t+1}^{n-1}(W_{t+1}^n), R-1+\hat{R}_{t+1}(W_{t+1}^n),W_{t+1}^n)
+\begin{align}
+\hat{v}_{t+1}^n(R) &=F_t^{\ast}(\bar{v}_{t+1}^{n-1}(W_{t+1}^n), R+\hat{R}_{t+1}(W_{t+1}^n),W_{t+1}^n)-F_t^{\ast}(\bar{v}_{t+1}^{n-1}(W_{t+1}^n), R-1+\hat{R}_{t+1}(W_{t+1}^n),W_{t+1}^n)\\
+&=?
+\end{align}
 $$
 
 ##### Step 5-2: for $W_t\in\mathcal{W_t}$, and $R=1,\cdots,B^R$, update $z_t^n(R,W_t)$:
@@ -226,14 +229,27 @@ $$
 z_t^n(R,W_t)= (1-\bar{\alpha}_t^n(R,W_t)) \bar{v}_t^{n-1}(R,W_t)+\bar{\alpha}_t^n(R,W_t)\hat{v}_{t+1}^n(R)
 $$
 
-notes:注意这里的scenario
+notes:注意这里的scenario,一个是 $n-1$，另一个是 $n$.
+
+where 
+$$
+\bar{\alpha}_t^n(R,W_t)= \alpha_t^n 1_{W_t=W_t^n}(1_{R=R_t^{x,n}}+1_{R=R_t^{x,n}+\rho})
+$$
+
+##### Step 5-3: perform the projection operation $\bar{v}_t^n= \Pi_{\mathcal{C}}(z_t^n)$
+
+$$
+\Pi_{\mathcal{C}}(z_t^n)(R,W_t)=
+\begin{cases}
+z_t^n(R_t^{x,n},W_t^n), & if \  W_t= W_t^n , R< R_t^{x,n}, z_t^n(R, W_t)\leq z_t^n(R_t^{x,n},W_t^n) \\
+z_t^n(R_t^{x,n}+\rho, W_t^n), & if \ W_t=W_t^n, R>R_t^{x,n}+\rho, z_t^n(R,W_t) \geq z_t^{n}(R_t^{x,n}+\rho, W_t^n) \\
+z_t^n(R,W_t),& otherwise. \\
+\end{cases}
+$$
 
 
 
-
-
-
-
+#### Step 6: Increase $n$ by one and go to step 1
 
 
 
@@ -245,8 +261,5 @@ notes:注意这里的scenario
 
 Reference:
 
-```
-## References
-Juliana Nascimento,Warren B Powell. (2013). An optimal approximate dynamic programming algorithm for the economic dispatch problem with grid-level storage, IEEE Transactions on Automatic Control, to appear print.
-```
-
+1.  Juliana Nascimento,Warren B Powell. (2013). An optimal approximate dynamic programming algorithm for the economic dispatch problem with grid-level storage, IEEE Transactions on Automatic Control, to appear print.
+2. https://zhuanlan.zhihu.com/p/25319023
