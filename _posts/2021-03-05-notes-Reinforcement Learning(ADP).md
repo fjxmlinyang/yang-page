@@ -261,6 +261,12 @@ $$
 
 
 
+nonanticipity你的决定和将来的情况无关,相当于你种田，不管你将来的天气
+
+
+
+
+
 Reference:
 
 1.  Juliana Nascimento,Warren B Powell. (2013). An optimal approximate dynamic programming algorithm for the economic dispatch problem with grid-level storage, IEEE Transactions on Automatic Control, to appear print.
