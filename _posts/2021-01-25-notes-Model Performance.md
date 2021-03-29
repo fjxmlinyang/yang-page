@@ -224,13 +224,24 @@ Precision ，recall=> classifier; threshold(分割positive or negative 的临界
 
 ROC AUC is the probability that  a randomly-chosen positive example is ranked more highly than a randomly-chosen negative example.
 
-就是在random排序里面，positive example >negative example的概率(如果都是positive大于negative，那就是AUC=1咯)
+- 就是在random排序里面，positive example >negative example的概率(如果都是positive大于negative，这是完美排列,你的true positive rate都是对的且一直是1,那就是AUC=1咯)
+
+- for example
+
+- $$
+  \begin{align}
+   0.8 \ \   0.7 \ \   0.6 \ \ 0.5 \ \ 0.4 \ \ 0.3\\
+   1 \ \ 1\ \  1 \ \ 1\ \ 1\ \  0
+  \end{align}
+  $$
+
+- 如果你放任何一个threshold，true是不动的，唯一有区别的是negative，比如你设threshold在0.45, TP/(TP+FN)=4/4. FP/(TN+FP)=0/2。即使你继续提高threshold，你也只会在x=0的这条上移动
 
 
 
+注意看清楚你的x轴&y轴，有时候会让x轴变成1-false positive rate
 
-
-
+![Screenshot from 2021-03-26 08-50-11](/home/yanglin/Documents/GitHub/fjxmlinyang.github.io/_posts/Screenshot from 2021-03-26 08-50-11.png)
 
 
 
@@ -256,7 +267,7 @@ ROC AUC is the probability that  a randomly-chosen positive example is ranked mo
 
 ##### 1)ERM，empirical risk measure：
 
-mean sqaure error: $E(f;D)=\frac{1}{m}\sum_{i=1}^m(f(x_i)-y_i)^2$
+mean square error: $E(f;D)=\frac{1}{m}\sum_{i=1}^m(f(x_i)-y_i)^2$
 
 1-1）link：在classification上
 

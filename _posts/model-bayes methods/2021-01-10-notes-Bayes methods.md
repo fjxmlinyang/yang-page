@@ -20,7 +20,7 @@ We are talking about Bayes models here.
 
 
 
-### EM（Expectation-Maximization）&MLE
+## EM（Expectation-Maximization）&MLE
 
 1）EM 算法本来用来找MLE；相当于你多加点，调整parameter
 
@@ -28,7 +28,7 @@ We are talking about Bayes models here.
 
 2）**em算法，第一步，选择归于哪个类（比如二项分布的哪个类型）；第二步调整中心**
 
-### naive bayes
+## naive bayes
 
 1）MLE
 
@@ -58,9 +58,9 @@ $h_{nb}(\textbf{x})=\arg \max_{c \in Y}P(c)\Pi_{i=1}^dP(x_i\vert c)$
 
 
 
-### naive bayes classifier
+## 例子：naive bayes classifier
 
-condition: attribute conditional independence assumption:every feature independently influences the outcome
+condition: attribute conditional independence assumption: every feature independently influences the outcome
 
 
 
@@ -86,49 +86,51 @@ $$h_{nb}(x)=\arg \max_{c \in \mathcal{Y}}P(c)\Pi_{i=1}^d P(x_i\vert c)$$
 
 
 
-#### 一个关于条件概率的例子
+## 例子：关于条件概率和naive bayes的关系
 
-1) 如何理解调节因子
+1) 如何理解调节因子，$P(A\vert B)=P(A)\frac{P(B \vert A)}{P(B)}$，你当作物理上的平衡，或者说gibss sampling的概念
 
+2)整个naive bayes也就是来调整调节因子，比如说你有事件$B$和事件$C$，which他们都**是conditional independence of $A$**(不同于independence)
 
+- 思考方式：你先把BC当作是一个事件来处理，后来再用indepedence分开
 
-#### 实际例子：fraud activity detection
+$$
+P(A\vert BC)=\frac{P(ABC)}{P(BC)}=P(A)\frac{P(BC \vert A)}{P(BC)}=\left(P(A)\frac{P(B\vert CA)P(C \vert A)}{P(BC)} \right)= P(A)P(B \vert A)P(C \vert A)\frac{1}{P(BC)}
+$$
 
-社交网络公司的判断异常用户，对于用户的行为进行一个detection。
+- 然后你找那个概率最大的判定P(A) ，就像前面的问题
 
-(比如说不看广告的账号,很正常这个对整个运营是干扰。ex如果你要做推广。。)
+## 例子：实际应用fraud activity detection
 
-Prior information : $C_0=0.6$ , $C_1=0.1$ （两种fraud，僵尸号，水军）
+- 社交网络公司的判断异常用户，对于用户的行为进行一个detection。(比如说不看广告的账号,很正常这个对整个运营是干扰。ex如果你要做推广。。)
 
-Features:(blogs量，朋友量，头像)
+- Prior information : $C_0=0.6$ , $C_1=0.1$ （两种fraud，僵尸号，水军）
 
-$F_1$:
+- Features:(blogs量，朋友量，头像)
 
-$F_2$:
+  $F_1$:
 
-$F_3$:
+  $F_2$:
 
+  $F_3$:
 
+   **Target: find $C_1$ or $C_2$ you would like to choose?**
 
-1)
+- **What we shall use?** 条件概率$P(C\vert A)=\frac{P(C)P(A \vert C)}{P(A)}$
 
-What we shall use? 条件概率$P(C\vert A)=\frac{P(C)P(A \vert C)}{P(A)}$
+  - if we know F_1=small, F_2=medium, F_3=real ,can we tell which type of fraud?
 
-if we know F_1=small, F_2=medium, F_3=real ,can we tell which type of fraud?
+  - we need to find $P(C\vert  F_1, \cdots, F_n)$
 
-we need to find $P(C\vert  F_1, \cdots, F_n)$
+  - $P(C\vert  F_1, \cdots, F_n)=\frac{P(C)P(F_1,\cdots,F_n \vert C)}{P(F_1,\cdots,F_n)}$
 
-$P(C\vert  F_1, \cdots, F_n)=\frac{P(C)P(F_1,\cdots,F_n \vert C)}{P(F_1,\cdots,F_n)}$
+    where $P(F_1,\cdots,F_n\bigm|C)=P(F_1\bigm|C)P(F_2\bigm|C,F_1)\cdots P(F_n\bigm|C, F_1,\cdots,F_{n-1})$
 
- where $P(F_1,\cdots,F_n\bigm|C)=P(F_1\bigm|C)P(F_2\bigm|C,F_1)\cdots P(F_n\bigm|C, F_1,\cdots,F_{n-1})$
+  - Then under the assumption of conditional independent
 
-Then under the assumption of conditional independent
+    we have the $P(F_1,\cdots, F_n \vert C)=P(F_1\vert C)P(F_2\vert C)\cdots F(F_n\vert C)$how to calculate? 
 
-we have the $P(F_1,\cdots, F_n \vert C)=P(F_1\vert C)P(F_2\vert C)\cdots F(F_n\vert C)$
-
-2) how to calculate? 
-
-Put in.
+- How to calculate? Put in.
 
 Notes：
 
@@ -144,20 +146,20 @@ Notes：
 
 
 
-# Basic Probability
+# Supplement: Basic Probability
 
-#### randomness?
+## randomness?
 
 1. the probabiltiy distribution ss a description of a random phenomeon
 
-#### random variable?
+## random variable?
 
 1. r.v.
 2. Parameter  vs random variable:
    1. the paraemters are numbers which **helps** uniquely define the proability distribution or model
    2. also, it can be determined by the historical data after the parameter estimation methods
 
-#### type of random variable?
+## type of random variable?
 
 1. Discrete：bernoulli？et.c
 
@@ -171,7 +173,7 @@ Notes：
 
 
 
-#### cdf/pdf
+## cdf/pdf
 
 pdf是cdf的求导，cdf是pdf的积分，这个相当于是密度和面积（体积）的概念。
 
@@ -179,7 +181,7 @@ pdf是cdf的求导，cdf是pdf的积分，这个相当于是密度和面积（�
 
 
 
-#### CLT/SLLN
+## CLT/SLLN
 
 从无到有
 
@@ -189,13 +191,13 @@ pdf是cdf的求导，cdf是pdf的积分，这个相当于是密度和面积（�
 
 
 
+## Independent/Dependence
 
 
 
 
 
-
-#### bayes： adjusted coeffiency
+## bayes： adjusted coeffiency
 
 解释方式1
 
@@ -214,6 +216,16 @@ pdf是cdf的求导，cdf是pdf的积分，这个相当于是密度和面积（�
 ​	 $P(B \vert A) = P(A\vert B) \frac{P(B)}{P(A)}$
 
 ​	对概率的偏见，
+
+
+
+
+
+
+
+Actually, see my course slides on probability and statistics
+
+
 
 
 
