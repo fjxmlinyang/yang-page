@@ -10,6 +10,8 @@ tags:
 
 Here are notes about KNN&PCA
 
+
+
 # KNN
 
 ## Introduction
@@ -19,11 +21,15 @@ Here are notes about KNN&PCA
   the higher K is, the smoother(most robust) your model can be. 
 
 - Multiple definition choice for ‘distance’
+  
   - CityBlock Distance, Euclidean Distance, Gaussian Distance
 
 
 
-面试注意：和RF一样，配合coding考你
+#### Implement KNN algorithm
+
+- Find the top K closest distance from your returned unsorted distance array(heap sort会提到)
+- 面试：关键其实是coding，如何sorting的问题
 
 
 

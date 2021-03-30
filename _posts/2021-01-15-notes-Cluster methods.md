@@ -20,7 +20,15 @@ Question: is it related to kernel method?
 
 
 
-### Protoptype-based cluster（**k-means clustering**&LVQ&Mixture of Gaussian）
+
+
+# Protoptype-based cluster
+
+（**k-means clustering**&LVQ&Mixture of Gaussian）
+
+
+
+
 
 ##### K-means clustering
 
@@ -64,7 +72,21 @@ https://zhuanlan.zhihu.com/p/36331115
 
 1）目标函数是关于correlation between the returns of the assets. $\sum_{i=1}^n\sum_{j=1}^n\rho_{ij}z_{ij}$,  2）for every asset $i$, we have to find a representative asset $j$;3) $z_{ij}$ 是来找它自己 asset $i$来找其代表asset $j$； 4） constaint： $\sum_{j=1}^nz_{ij}=1$; $\sum_{i=1}^ny_i \leq k$; $z_{ij}\leq y_j$; $z_{ij}, y_i \in \{0,1\}$
 
-### density based clustering& **hierarchical clustering**
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+## density based clustering& **hierarchical clustering**
 
 1）It is a clustering algorithm with an agglomerative hierarchical approach that build nested clusters in a successive manner.
 

@@ -79,6 +79,127 @@ deep learning：
 
 
 
+
+
+
+
+# Basic Probability
+
+## randomness?
+
+1. the probabiltiy distribution ss a description of a random phenomeon
+
+## random variable?
+
+1. r.v.
+2. Parameter  vs random variable:
+   1. the paraemters are numbers which **helps** uniquely define the probability distribution or model
+   2. also, it can be determined by the historical data after the parameter estimation methods
+
+## type of random variable?
+
+1. Discrete：bernoulli？et.c
+
+   Bernoullli？$P(Y=y)=p^{y}(1-p)^{1-y}$, $0<p<1$, $y=0,1$
+
+2. Continuous： normal， weibull？
+
+
+
+
+
+
+
+## cdf/pdf
+
+pdf是cdf的求导，cdf是pdf的积分，这个相当于是密度和面积（体积）的概念。
+
+
+
+
+
+## CLT/SLLN
+
+从无到有
+
+
+
+
+
+
+
+## Independent/Dependence
+
+
+
+
+
+## bayes： adjusted coeffiency
+
+解释方式1
+
+​	 $P(B \vert A) = P(B) \frac{P(A|B)}{P(A)}$
+
+​	新信息出现后B的概率=B原先的概率*信息的调整（$>1, \ , =1 \ , <1$）
+
+​	$\frac{P(A|B)}{P(A)}=1$说明是独立
+
+​	$\frac{P(A|B)}{P(A)}>1$
+
+​	$\frac{P(A|B)}{P(A)}<1$
+
+ 解释方式2
+
+​	 $P(B \vert A) = P(A\vert B) \frac{P(B)}{P(A)}$
+
+​	对概率的偏见，
+
+
+
+
+
+
+
+Actually, see my course slides on probability and statistics
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 # Probability vs Statistics
 
 - in probability theory we consider some underlying process which has some randomness or uncertainty modeled by random variables, and we figure out what happens. It is a numerical description of the likelihood of an event.
@@ -90,3 +211,10 @@ deep learning：
 Reference:
 
 https://www.caseinterview.com/case_interview_frameworks.pdf
+
+
+
+
+
+
+
