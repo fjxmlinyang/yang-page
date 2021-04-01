@@ -155,11 +155,7 @@ $$
 & 0 \leq pump_t \leq Pump_t, \\
 & R_{t}=R_{t-1}+gen_t/\eta^g-{pump}_t \ast \eta^p \\
 & \underline{R}\leq R_t \leq \bar{R} \\
-<<<<<<< HEAD
 & \sum_{r=1}^{B^R}y_{tr}\rho =f^{x}(R_t,x_t)=R_t? (这个将来可以sample\&用来catch将来的soc的？)
-=======
-& \sum_{r=1}^{B^R}y_{tr}\rho =f^{x}(R_t,x_t) =R_t^x? (这个将来可以sample\&用来catch将来的soc的？)
->>>>>>> b04a124642748cd0ee399bdabc0f8d8870f31c03
 \end{align}
 $$
 
