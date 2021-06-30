@@ -131,7 +131,7 @@ Error due to Variance:
 
 
 
-Q：那你怎么从一个traning的bias 和variance去看model本身的bias和variance呢？
+Q：那你怎么从一个training的bias 和variance去看model本身的bias和variance呢？
 
 Ans：这里的模型空间，会随着模型复杂度变大，很自然，你的variance增大，你的bias减小
 

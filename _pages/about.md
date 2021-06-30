@@ -8,4 +8,4 @@ redirect_from:
   - /about.html
 ---
 
-My name is Yang Lin. Welcome to my personal page! The page is recording what I interest in: making decisions under uncertainty. It includes some elements: stochastic optimization, risk, statistical learning theory, and machine learning model, etc. Also, some projects I have done. And? 
+Welcome to Yang Lin‘s personal page! The page is recording what I interest in: making decisions under uncertainty. It includes some elements: stochastic optimization, risk, statistical learning theory, and machine learning model, etc. Also, some projects I have done. 

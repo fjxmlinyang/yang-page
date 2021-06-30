@@ -90,7 +90,7 @@ $$
 1. mle是什么？mle is a method of estimating the parameters of a statistical model given obersvation, by finding the parameter values  that maximize the likelihood of making the observation given the parameters.
    用参数估计的方法，在有了一定的观测值之后，来找parameter，让我们可以最有可能看到我们观测值，让我们可以最大程度放大我们的观测值
 
-2.  如果对于linear regression 来说，相当与用一个方法，**去找穿过最大可能性（最大密度）(尽可能多的概率)的那些点的线上**
+2. 如果对于linear regression 来说，相当与用一个方法，**去找穿过最大可能性（最大密度）(尽可能多的概率)的那些点的线上**
    1. 同时这条线对于x来说是最大可能性分布所在的线（CLT）
    2. 见图
 
@@ -128,7 +128,6 @@ $$
    $$
       \arg \min \sum_{i=1}^n(Y_i-\bar{\beta}_0-\bar{\beta}_1X_i)^2
    $$
-   
 
 
 
@@ -241,7 +240,6 @@ Reference:
 2) notes in Good notes:
 
 3）上课笔记lai
-
 
 
 
