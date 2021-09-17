@@ -176,9 +176,9 @@ Consider 这个问题，我们需要link到统计上的假设检验问题
 
 
 
+GLM需要一些学习，assumption？
 
-
-
+https://zhuanlan.zhihu.com/p/22876460
 
 
 

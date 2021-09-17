@@ -241,7 +241,7 @@ ROC AUC is the probability that  a randomly-chosen positive example is ranked mo
 
 注意看清楚你的x轴&y轴，有时候会让x轴变成1-false positive rate
 
-![Screenshot from 2021-03-26 08-50-11](/home/yanglin/Documents/GitHub/fjxmlinyang.github.io/_posts/Screenshot from 2021-03-26 08-50-11.png)
+![Screenshot from 2021-03-26 08-50-11](./Screenshot from 2021-03-26 08-50-11.png)
 
 
 

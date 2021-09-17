@@ -83,28 +83,6 @@ $\min -tr(W^{T}XX^{T}W)$ s.t. $W^TW=I$
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 # ICA（**Independent component analysis**）
 
 - ICA （独立成分分析）与 PCA 类似，也会找到一个新基底来表示数据，但两者的目标完全不同
@@ -112,18 +90,6 @@ $\min -tr(W^{T}XX^{T}W)$ s.t. $W^TW=I$
   - 在一个宴会上有 n 个人同时说话，并且房间里的麦克风只接收到了这 n 个声音的叠加
   - 假定该房间有 n 个麦克风，则每个麦克风记录了说话者声音的不同叠加（由于距离不同）
   - 我们希望基于这些麦克风记录的声音，来还原原始的 n 名说话者的声音信号
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -232,14 +198,14 @@ Use regularization methods to do feature selection
 
 
 
-（面试题）问题1：features selection 有几个方法？
+**（面试题）问题1：features selection 有几个方法？**
 
 - pearson corr
 - L1，把想象的feature的coefficient变成0
 - Ensemble learning 中的feature importance（RF，不能用decision tree）
 - PCA，can helps reduce number但是和前面三个不太一样哪个
 
-（面试题）问题2：在系统中有high corr 的features，怎么来提高模型精度？（你提高精度，说白了就是feature selection+L2）
+**（面试题）问题2：在系统中有high corr 的features，怎么来提高模型精度？（你提高精度，说白了就是feature selection+L2）**
 
 - pearson corr
 - L1
@@ -247,7 +213,7 @@ Use regularization methods to do feature selection
 - PCA
 - L2
 
-（面试题）问题3：如果有high corr的features，model testing的error很高，怎么办？
+**（面试题）问题3：如果有high corr的features，model testing的error很高，怎么办？**
 
 - 扔feature
 - l2 或者random forest， reduce var的方法
@@ -391,10 +357,6 @@ example: 你用\rho告诉老板，老板很开心；但是PCA呵呵，你的feat
 
 
 如果是不对称的，记得用**奇异值分解**（singular value decomposition）
-
-
-
-
 
 
 

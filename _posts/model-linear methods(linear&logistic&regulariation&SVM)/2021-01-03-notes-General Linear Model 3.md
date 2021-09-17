@@ -150,15 +150,15 @@ Ans：这里的模型空间，会随着模型复杂度变大，很自然，你�
 
 ​	1. 这是你不同的model，不同的loss的parameter不一样，因为training data 不一样
 
-<img src="/Users/yanglin/Documents/GitHub/fjxmlinyang.github.io/_posts/Screen Shot 2021-03-13 at 9.58.41 PM.png" alt="Screen Shot 2021-03-13 at 9.58.41 PM" style="zoom: 50%;" />
+<img src="./Screen Shot 2021-03-13 at 9.58.41 PM.png" alt="Screen Shot 2021-03-13 at 9.58.41 PM" style="zoom: 50%;" />
 
 
 
 ## 3. How to solve the overfitting problem？
 
-1. Increase traning data size
+1. Increase training data size
 
-2. avoid over-traning your dataset:
+2. avoid over-training your dataset:
 
    1. Filter out features, e.g. feature reduction
 

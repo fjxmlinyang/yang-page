@@ -319,6 +319,12 @@ notes:
 
 1. 如果是feature有categorical和continuous，你可能先做categorical（当然可以从数据本身来）
 
+
+
+**（面试问题）**
+
+注意三个问题，1）forest 的深度，有最优，过度会overfitting？；2）tree的多少，越多越好；3）feature在每个tree上，当然多了更robust
+
 ## Boosting：
 
 1. bagging involves creating multiple copies of the original training data set using the bootstrap, fitting a separate decision tree to each copy, and then combining all of the trees in order to create a single predictive model.(bagging是用再抽样法创造多个副本，在对每个副本建立决策树，然后将这些数结合在一起来建立一个预测模型)
