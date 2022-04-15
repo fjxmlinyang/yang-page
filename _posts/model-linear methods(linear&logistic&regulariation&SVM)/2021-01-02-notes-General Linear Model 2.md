@@ -76,7 +76,7 @@ $$
 log\frac{p(X)}{1-p(X)} = \beta_0+\beta_1X
 $$
 
-3. 如何推导， 用博弈论中的$odds=\frac{p}{1-p}$,值域 $[0,\infty)$, 然后 $log(odds)=log\frac{p}{1-p}$,值域就到了$[0,\infty]$
+3. 如何推导， 用博弈论中的$odds=\frac{p}{1-p}$,值域 $[0,\infty)$, 然后 $log(odds)=log\frac{p}{1-p}$,值域就到了$[-\infty,\infty]$
    $$
    \begin{align}
    log\frac{p}{1-p}=f(x)=\beta_0+\beta_1x \\
