@@ -186,7 +186,7 @@ $$
 
 notes：
 
-1. **（threshold相当于调整你图上的hyperplane的后面那个constant $\log \frac{p(X)}{1-p(X)}=C=\beta_0+\cdots\beta_1X_1$）<img src="/Users/yanglin/Documents/GitHub/fjxmlinyang.github.io/_posts/Screen Shot 2021-03-12 at 4.17.02 PM.png" alt="Screen Shot 2021-03-12 at 4.17.02 PM" style="zoom:25%;" />**
+1. **（threshold相当于调整你图上的hyperplane的后面那个constant $\log \frac{p(X)}{1-p(X)}=C=\beta_0+\cdots\beta_1X_1$）<img src="./Screen Shot 2021-03-12 at 4.17.02 PM.png" alt="Screen Shot 2021-03-12 at 4.17.02 PM" style="zoom:25%;" />**
 2. 很多时候，多分类问题可以比较成为多个两分类问题，两两二分类来做
 3. logistics regression并不适用linear的来考虑sysem error $\varepsilon$
 
