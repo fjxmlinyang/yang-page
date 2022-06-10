@@ -1,7 +1,7 @@
 ---
 title: "Project: Building a Spam Filter with Naive Bayes"
 excerpt: "Explore Bayes model <br/>"
-collection: portfolio
+collection: projects
 ---
 
 

@@ -1,7 +1,7 @@
 ---
 title: "Project: Cancer-Prediction"
 excerpt: "Project from Kaggle"
-collection: portfolio
+collection: projects
 ---
 
 

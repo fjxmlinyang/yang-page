@@ -1,7 +1,7 @@
 ---
 title: "Project: Find the best markets"
 excerpt: "Project from dataquest"
-collection: portfolio
+collection: projects
 ---
 
 ```python
