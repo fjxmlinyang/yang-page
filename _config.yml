@@ -222,7 +222,7 @@ defaults:
   # _publications&talks
   - scope:
       path: ""
-      type: publications&talks
+      type: publications
     values:
       layout: single
       author_profile: true
