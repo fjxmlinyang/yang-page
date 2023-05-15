@@ -10,7 +10,7 @@ tags:
 
 We discuss some concepts in reinforcement learning
 
-## On Policy/Off Policy&Morte Carlo/ Temporal Difference
+# On Policy/Off Policy&Morte Carlo/ Temporal Difference
 
 In reinforcment learning, there is a very important problem. Under a given policy $\pi$,  how to evaluate the state value function $V^{\pi}(s)$, or the state- action value function  $Q^{\pi}(s,a)$ by the $\textbf{experience}$. This process is policy evaluation
 
@@ -30,9 +30,9 @@ At the same time, in the situation of model-free, there are two methods to evalu
 
 
 
-#### Morte Carlo Policy Evaluation
+## 1. Morte Carlo Policy Evaluation
 
-##### 1.1 Monte Carlo on policy evaluation 
+### 1.1 Monte Carlo on policy evaluation 
 
 $$
 V^{\pi}(s)=E_{\gamma \sim \pi}(R(\gamma)|s_0=s)=\frac{1}{n}\sum_{i=1}^{n}R(\gamma_i)
@@ -52,7 +52,7 @@ Where $R(\gamma)=r_1+\gamma r_2+\cdots \gamma^{T-1}r_{T}$
 * Increment total return $G(s)+G(s)+G_{i,t}$
 * Update estimate: $V^{\pi}=G(s)/N(s)$
 
-##### 1.2 Monte Carlo off policy evaluation 
+### 1.2 Monte Carlo off policy evaluation 
 
 $$
 V^{\pi}(s)=E_{\gamma \sim \pi}(R(\gamma|s_0=s))=\int P(\gamma|\pi)R(\gamma)=\int P(\gamma|\mu)\frac{P(\gamma|\pi)}{\gamma|\mu}R(\gamma)=E_{\gamma \sim \mu}(\frac{P(\gamma|\pi)}{P(\gamma|\mu)}R(\gamma))
@@ -71,9 +71,9 @@ It is easy to see the algorithm use the idea of  important sampling
 
 
 
-#### Temporal Difference Policy Evaluation
+## 2. Temporal Difference Policy Evaluation
 
-##### 2.1 Temporal Difference on Policy Evaluation
+### 2.1 Temporal Difference on Policy Evaluation
 
 * Set $t=0$, initial state $s_t=s_0$
 
@@ -94,7 +94,7 @@ It is easy to see the algorithm use the idea of  important sampling
 
 * 
 
-##### 2.2 Temporal Difference off Policy Evaluation
+### 2.2 Temporal Difference off Policy Evaluation
 
 * Set $t=0$, initial state $s_t=s_0$
 
@@ -119,7 +119,7 @@ It is easy to see the algorithm use the idea of  important sampling
 
 Because SARSA pick the particular action next, while Q-learning pick the max action next(action from a different policy)
 
-#### Conclusion
+# Conclusion
 
 Under the transition $<s_t,a_t, r_t, s_{t+1},a_{t+1}>$ to evaluate the valuation of the policy $\pi$. 
 

@@ -76,11 +76,11 @@ $$h_{nb}(x)=\arg \max_{c \in \mathcal{Y}}P(c)\Pi_{i=1}^d P(x_i\vert c)$$
 
 显然，naive bayes classification的训练过程就是基于训练集$D$ 来估计 先验概率 $P(c)$, 并为每个属性估计条件概率 $P(x_i \vert c)$
 
-1. 令$D_c$ 表示训练集 $D$中第$c$类样本组成的集合，若有充足的独立同分布样本，则可$P(c)=\frac{\left|D_c\right|}{D}$
+1. 令$D_c$ 表示训练集 $D$中第$c$类样本组成的集合，若有充足的独立同分布样本，则可$P(c)=\frac{\left \vert D_c\right|}{D}$
 
 2. 对离散属性，另$D_{c,x_i}$ 表示 $D_c$中的第$i$个属性上取值为$x_i$的样本组成集合，则$P(x_i\vert c)=\frac{\vert D_{c,x_i}\vert }{\vert D_c\vert }$
 
-   对连续型，可以考虑密度函数 $p(x_i\bigm|c)=\frac{1}{\sqrt{2\pi}\sigma_{c,i}}\exp(-\frac{(x_i-\mu_{c,i})^2}{2\sigma_{c,i}^2})$ 
+   对连续型，可以考虑密度函数 $p(x_i\bigm \vert c)=\frac{1}{\sqrt{2\pi}\sigma_{c,i}}\exp(-\frac{(x_i-\mu_{c,i})^2}{2\sigma_{c,i}^2})$ 
 
 
 
@@ -124,7 +124,7 @@ $$
 
   - $P(C\vert  F_1, \cdots, F_n)=\frac{P(C)P(F_1,\cdots,F_n \vert C)}{P(F_1,\cdots,F_n)}$
 
-    where $P(F_1,\cdots,F_n\bigm|C)=P(F_1\bigm|C)P(F_2\bigm|C,F_1)\cdots P(F_n\bigm|C, F_1,\cdots,F_{n-1})$
+    where $P(F_1,\cdots,F_n\bigm\vert C)=P(F_1\bigm \vert C)P(F_2\bigm \vert C,F_1)\cdots P(F_n\bigm \vert C, F_1,\cdots,F_{n-1})$
 
   - Then under the assumption of conditional independent
 
@@ -156,7 +156,7 @@ reference:
 
 
 
-### Bayesian Network
+# Bayesian Network
 
 
 
